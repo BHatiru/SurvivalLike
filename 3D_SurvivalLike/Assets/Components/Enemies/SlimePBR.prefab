@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 6604291879277838332}
   - component: {fileID: 4571664973732546811}
   - component: {fileID: 426294470531611153}
+  - component: {fileID: 7932394463578963399}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -453,7 +454,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &6604291879277838332
 BoxCollider:
@@ -482,7 +483,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.75
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -502,6 +503,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565bff61e0847a041992a10ac4f64053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+--- !u!135 &7932394463578963399
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517132889767214305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &3517173461291462421
 GameObject:
   m_ObjectHideFlags: 0

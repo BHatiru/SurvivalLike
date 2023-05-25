@@ -17,7 +17,6 @@ public class EnemyGenerator : MonoBehaviour
         InvokeRepeating("SpawnBanchOfEnemies", 0f, _spawnRate);
     }
 
-
     Vector3 RandomPositionAroundPlayer()
     {
         Vector3 randomPos = Random.insideUnitSphere * _spawnRadius;
@@ -40,5 +39,9 @@ public class EnemyGenerator : MonoBehaviour
         {
             SpawnEnemy(_enemyIndex);
         }
+    }
+
+    public void GenerateWave(){
+        
     }
 }
