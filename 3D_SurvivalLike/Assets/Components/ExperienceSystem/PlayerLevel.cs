@@ -32,21 +32,7 @@ public class PlayerLevel : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        AttractExpCrystals();
-    }
-    private void AttractExpCrystals()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _attractionRadius);
-        foreach(Collider collider in colliders)
-        {
-            if(collider.GetComponent<ExpCrystal>() != null)
-            {
-                collider.GetComponent<ExpCrystal>().Attract(transform.position);
-            }
-        }
-    }
+
 
     void OnDrawGizmosSelected()
     {

@@ -1004,6 +1004,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2836a2f432b7c974194d263303df542c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dropList:
+  - {fileID: 2959909667985161178, guid: db20ecd43063a08489a44ec649181024, type: 3}
+  - {fileID: 1000010714891294, guid: 5a0537415d4017c4fad7a4986f502dc1, type: 3}
+  _expCrystalsDropChance: 0.2
+  _healthCrystalsDropChance: 0.01
 --- !u!1 &8447495964431443312
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,12 +7,13 @@ public class BaseEnemy : MonoBehaviour
     private NavMeshAgent _enemy;
 
     private GameObject _target;
-    private PlayerScript _player;
+    private PlayerHealth _player;
     private float damageCooldown = 0.5f;  
     private float damageTimer = 0f;      
     [SerializeField] private float speed;
     [SerializeField] private float health=15f;
     [SerializeField] private float damage=2f;
+    public event System.Action OnDeath;
     
     // Start is called before the first frame update
     void Start()
@@ -48,8 +49,10 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
+
     public void Die()
     {
+        OnDeath?.Invoke();
         //Additional death behaviour
         Debug.Log("Enemy died");
         //destroy object
@@ -73,7 +76,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if (_player == null)
         {
-            _player = _target.GetComponent<PlayerScript>();
+            _player = _target.GetComponent<PlayerHealth>();
         }
         _player.TakeDamage(damage);
     }
