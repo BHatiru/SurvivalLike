@@ -10,9 +10,10 @@ public class BaseEnemy : MonoBehaviour
     private PlayerScript _player;
     private float damageCooldown = 0.5f;  
     private float damageTimer = 0f;      
-    private float speed;
-    [SerializeField] private float health;
-    [SerializeField] private float damage;
+    [SerializeField] private float speed;
+    [SerializeField] private float health=15f;
+    [SerializeField] private float damage=2f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class BaseEnemy : MonoBehaviour
     void InitializeStats()
     {
         //TODO create scribtable objects to store enemy stats
+        _enemy.speed = speed;
     }
 
     // Update is called once per frame

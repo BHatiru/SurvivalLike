@@ -7,13 +7,25 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] private GameObject[] _enemyPrefabs;
     [SerializeField] private float _spawnRate = 5f;
     [SerializeField] private Vector2 _spawnArea = new Vector2(10f, 10f);
+    [SerializeField] private int _minEnemies = 5;
     [SerializeField] private int _maxEnemies = 10;
     [SerializeField] private int _enemyIndex = 0;
     [SerializeField] private Transform _player;
+
+    private float _spawnTimer = 0f;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnBanchOfEnemies", 0f, _spawnRate);
+    }
+
+    void Update()
+    {
+        _spawnTimer += Time.deltaTime;
+        if(_spawnTimer >= _spawnRate)
+        {
+            SpawnBanchOfEnemies();
+            _spawnTimer = 0f;
+        }
     }
 
     Vector3 RandomPositionAroundPlayer()
@@ -50,7 +62,7 @@ public class EnemyGenerator : MonoBehaviour
 
     public void SpawnBanchOfEnemies()
     {
-        int randomNum = Random.Range(5, _maxEnemies);
+        int randomNum = Random.Range(_minEnemies, _maxEnemies);
         for (int i = 0; i < randomNum; i++)
         {
             SpawnEnemy(_enemyIndex);
