@@ -29,4 +29,24 @@ public class PlayerScript : MonoBehaviour
         GameEventSystem.Instance.NotifyPlayerDied();
         Debug.Log("Player died");
     }
+
+    public void Heal (float healAmount)
+    {
+        if(_currentHealth <= 0f) return;
+        
+        _currentHealth += healAmount;
+        if (_currentHealth > _maxHealth)
+        {
+            _currentHealth = _maxHealth;
+        }
+        _healthBar.UpdateHealthBar(_currentHealth, _maxHealth);
+        Debug.Log("Player healed " + healAmount + " health");
+    }
+
+    //Will be accessed from different script, for now test holder
+    private void LearnSkill(SkillLibrary skillLibrary, int skillIndex)
+    {
+        //TODO
+        SkillData skill = skillLibrary.Library[skillIndex];
+    }
 }

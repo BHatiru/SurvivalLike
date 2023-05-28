@@ -6,8 +6,9 @@ public class SkillData : ScriptableObject
 {
 
     public Sprite skillIcon;
-    public GameObject SkillPrefab;
+    public GameObject SkillVFX;
     public List<SkillLevelInfo> UpgradeInfo;
+    internal string skillName;
 
     [System.Serializable]
     public class SkillLevelInfo

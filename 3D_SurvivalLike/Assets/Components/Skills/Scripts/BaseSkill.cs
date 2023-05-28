@@ -11,20 +11,23 @@ public class BaseSkill : MonoBehaviour
     protected float quantity;
 
     protected int Level;
-    protected SkillData SkillData;
     protected bool IsActive;
 
-    void Cast(){
-        Debug.Log("Cast");
-    }
+    protected float timer;
+
 
     protected void SetActive()
     {
         IsActive = true;
     }
-    protected void UpdateStats()
+    protected void UpdateStats(SkillData data)
     {
-        //TODO  Update stats
+        SkillData.SkillLevelInfo info = data.UpgradeInfo[Level];
+        skillName = info.skillName;
+        damage = info.damage;
+        cooldown = info.cooldown;
+        duration = info.duration;
+        quantity = info.quantity;
     }
 
     protected void UpdateAnimation()

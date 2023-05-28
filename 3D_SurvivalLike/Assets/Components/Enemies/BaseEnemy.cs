@@ -8,10 +8,10 @@ public class BaseEnemy : MonoBehaviour
 
     private GameObject _target;
     private PlayerScript _player;
-    private float damageCooldown = 0.5f;  // Time interval between damage instances
-    private float damageTimer = 0f;      // Timer to track elapsed time
+    private float damageCooldown = 0.5f;  
+    private float damageTimer = 0f;      
     private float speed;
-    private float health;
+    [SerializeField] private float health;
     [SerializeField] private float damage;
     // Start is called before the first frame update
     void Start()
@@ -20,8 +20,13 @@ public class BaseEnemy : MonoBehaviour
         _target = GameObject.FindGameObjectWithTag("Player");
     }
 
+    void InitializeStats()
+    {
+        //TODO create scribtable objects to store enemy stats
+    }
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         FollowPlayer();
     }
@@ -32,6 +37,22 @@ public class BaseEnemy : MonoBehaviour
         _enemy.transform.LookAt(new Vector3(_target.transform.position.x, _enemy.transform.position.y, _target.transform.position.z));
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0f)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //Additional death behaviour
+        Debug.Log("Enemy died");
+        //destroy object
+        Destroy(gameObject);
+    }
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject == _target)
