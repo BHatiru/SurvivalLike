@@ -10,9 +10,11 @@ public class TestSkill : BaseSkill
 
     private ParticleSystem mainEffect;
     private GameObject skillHolder;
+    private Transform player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         UpdateStats(_SkillData);
         mainEffect = GetComponentInChildren<ParticleSystem>();
     }

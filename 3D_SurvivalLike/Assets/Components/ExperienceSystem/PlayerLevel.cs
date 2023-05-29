@@ -9,7 +9,7 @@ public class PlayerLevel : MonoBehaviour
     [SerializeField] private int currentExperience = 0;
     private int baseExperience = 100;
     [SerializeField] private float exponent = 2f;
-    [SerializeField] private float _attractionRadius = 7f;
+
     public int[] expToLevelUp;
 
     private void Start()
@@ -33,23 +33,15 @@ public class PlayerLevel : MonoBehaviour
     }
 
 
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _attractionRadius);
-    }
-
     public void GainExperience(int expAmount)
     {
         currentExperience += expAmount;
         
-        ExperienceManager.Instance.UpdateExperience(currentExperience, expToLevelUp[currentLevel]);
-
         if(currentExperience >= expToLevelUp[currentLevel] && currentLevel < maxLevel)
         {
             LevelUp();
         }
+        ExperienceManager.Instance.UpdateExperience(currentExperience, expToLevelUp[currentLevel]);
     }
 
     public void LevelUp()
@@ -61,7 +53,6 @@ public class PlayerLevel : MonoBehaviour
         currentLevel++;
         currentExperience = 0;
         ExperienceManager.Instance.LevelUp(currentLevel);
-        ExperienceManager.Instance.UpdateExperience(currentExperience, expToLevelUp[currentLevel]);
     }
     
 }
