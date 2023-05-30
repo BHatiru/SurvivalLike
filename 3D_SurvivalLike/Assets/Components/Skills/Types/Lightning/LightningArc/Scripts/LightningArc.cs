@@ -6,26 +6,22 @@ public class LightningArc : BaseSkill
 {
     [SerializeField] private float damageAmount = 20f;  // Amount of damage to apply
     [SerializeField] private float skillRange = 8f;  // Range of the skill
-    [SerializeField] private float rotationSpeed = 4.3f;  // Speed of rotation for the raycast
+    public float rotationSpeed = 4.3f;  // Speed of rotation for the raycast
+
 
     private const int SPEED_COEFFICIENT = 20;  // Coefficient for the speed of rotation
-    private const float RAYCAST_OFFSET = 0.5f;  // Offset for the raycast source object
-    
-    /*
-    4.297f is the speed of rotation for the raycast that is appoximately equal tothe rotation of arc visual effect rotation of -1,5f 
-    */
 
     //TODO Temporary element needed for development, should be removed later
-    public LineRenderer lineRenderer;  // Reference to the LineRenderer component
+    [SerializeField] private LineRenderer lineRenderer;  // Reference to the LineRenderer component
 
-    public GameObject raycastSource;  // Reference to the raycast source object
+    [SerializeField] private GameObject raycastSource;  // Reference to the raycast source object
 
-    [SerializeField] private GameObject[] _arcPoints;  // Array of points for the arc
+    [SerializeField] private GameObject _hitEffect;  // Reference to the hit effect object
 
     private void Start()
     {
         UpdateStats(_SkillData);
-        SetArcPoints();
+       // SetArcPoints();
         VarRename();
         raycastSource.transform.SetParent(transform);
         // Create the raycast source object at the player's position and rotation
@@ -33,25 +29,9 @@ public class LightningArc : BaseSkill
         lineRenderer.useWorldSpace = true;
     }
 
-    private void SetArcPoints()
-    {
-        _arcPoints[0].GetComponent<RotationAnime>().orbitSpeed = -1.5f;
-        _arcPoints[0].GetComponent<RotationAnime>().radius = 0.5f;
-
-        _arcPoints[3].GetComponent<RotationAnime>().orbitSpeed = -1.5f;
-        _arcPoints[3].GetComponent<RotationAnime>().radius = radius;
-    }
-
-    private void UpdateArcPoints()
-    {
-        float rval1 = Random.Range(1.45f, 1.5f);
-        float rval2 = Random.Range(-1.45f, -1.5f);
-        _arcPoints[1].GetComponent<RotationAnime>().orbitSpeed = rval1;
-        _arcPoints[2].GetComponent<RotationAnime>().orbitSpeed = rval2;
-    }
     private void VarRename(){
         damageAmount = damage;
-        skillRange = radius+RAYCAST_OFFSET;
+        skillRange = radius;
         rotationSpeed = speed;
     }
 
@@ -61,7 +41,7 @@ public class LightningArc : BaseSkill
         timer += Time.deltaTime;
         if (timer >= 0.07f)
         {
-            UpdateArcPoints();
+            //UpdateArcPoints();
             timer = 0f;
         }
         Cast();
@@ -71,7 +51,7 @@ public class LightningArc : BaseSkill
                 //I need to rotate the raycastSource object but independent from the player
         raycastSource.transform.Rotate(Vector3.up, SPEED_COEFFICIENT*rotationSpeed * Time.deltaTime,  Space.Self);
         // Fire a raycast from the raycast source in the forward direction
-        Ray ray = new Ray(raycastSource.transform.position, raycastSource.transform.right);
+        Ray ray = new Ray(raycastSource.transform.position, raycastSource.transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, skillRange))
         {
@@ -79,6 +59,9 @@ public class LightningArc : BaseSkill
             BaseEnemy enemy = hit.collider.GetComponent<BaseEnemy>();
             if (enemy != null)
             {
+                GameObject hitEffect = Instantiate(_hitEffect, hit.point, Quaternion.identity);
+                hitEffect.GetComponent<ParticleSystem>().Play();
+                Destroy(hitEffect, 0.5f);
                 // Apply damage to the enemy
                 enemy.TakeDamage(damageAmount);
             }

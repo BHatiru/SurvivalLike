@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c00b87065f46ef47b3e4bc80850ef11, type: 3}
   m_Name: LightningArc
   m_EditorClassIdentifier: 
-  skillIcon: {fileID: 0}
-  SkillVFX: {fileID: 4723954971519659391, guid: f063e8540a0abb14d991b1f4b8dd30ef,
+  skillIcon: {fileID: 21300000, guid: ebaef5902556fef44b513ae4e893d599, type: 3}
+  SkillPrefab: {fileID: 3210975951723384858, guid: c40426b30f428f24a93d879f76106b84,
     type: 3}
+  SkillHolder: {fileID: 0}
   UpgradeInfo:
   - skillName: Lightning Arc lvl 1
     damage: 20

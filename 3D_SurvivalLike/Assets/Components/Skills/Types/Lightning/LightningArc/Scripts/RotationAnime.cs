@@ -14,6 +14,8 @@ public class RotationAnime : MonoBehaviour
         Vector3 pos = new Vector3(Mathf.Cos(Time.time * orbitSpeed), 0, Mathf.Sin(Time.time * orbitSpeed)) * radius;
         // Set the object's position
         transform.position = pos + player.position;
+        // Add a orbit offset along the orbit path to the object's position
+        // transform.position += transform.right * radius;
 
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestSkill : BaseSkill
+public class SnowSlash : BaseSkill
 {
     //TODO Serialized for test purpose, remove later
     [SerializeField] private float slashRange;

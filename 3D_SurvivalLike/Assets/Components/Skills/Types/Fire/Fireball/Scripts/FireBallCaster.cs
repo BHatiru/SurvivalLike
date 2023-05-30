@@ -41,13 +41,19 @@ public class FireBallCaster : BaseSkill
 
     private void Cast()
     {
+        BaseEnemy target = detector.GetEnemy();
+        if (target == null)
+        {
+            return;
+        }
+        Vector3 enemyPos = target.transform.position;
         //Spawns projectile and rotate towards enemy
         fireBall = Instantiate(VFX, transform.position, Quaternion.identity);
         fireBall.GetComponent<Collider>().enabled = true;
-        var enemyPos = detector.GetEnemy().transform.position;
+        
         //rotate towards enemy, only horizontally
         fireBall.transform.LookAt(new Vector3(enemyPos.x, fireBall.transform.position.y, enemyPos.z));
-        BaseEnemy target = detector.GetEnemy();
+        
         timer = 0f;
     }
 

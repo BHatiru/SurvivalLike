@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c00b87065f46ef47b3e4bc80850ef11, type: 3}
   m_Name: SnowSlash
   m_EditorClassIdentifier: 
-  skillIcon: {fileID: 21300000, guid: c15e467eacbf3ee4197483734b0a3c51, type: 3}
-  SkillVFX: {fileID: 2060900179291159282, guid: ca6705a3f9070d14d819d179493bcfa0,
+  skillIcon: {fileID: 21300000, guid: e26e94ddfc08ee042891e2b6c54b8342, type: 3}
+  SkillPrefab: {fileID: 1876187409748660733, guid: dd7a4401868336b45b0f72adc61fe9db,
     type: 3}
+  SkillHolder: {fileID: 0}
   UpgradeInfo:
   - skillName: Snow Slash lvl 1
     damage: 15

@@ -29,7 +29,7 @@ public class BaseSkill : MonoBehaviour
     }
     protected void UpdateStats(SkillData data)
     {
-        VFX = data.SkillVFX;
+        VFX = data.SkillPrefab;
         SkillData.SkillLevelInfo info = data.UpgradeInfo[Level];
         skillName = info.skillName;
         damage = info.damage;

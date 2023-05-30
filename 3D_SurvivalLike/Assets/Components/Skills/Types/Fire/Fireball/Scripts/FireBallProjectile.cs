@@ -15,10 +15,12 @@ public class FireBallProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody> ();
         //find caster script  
         _caster = FindObjectOfType<FireBallCaster>();
+        Destroy(gameObject, 10f);
     }
 
     private void FixedUpdate()
     {
+        
         MoveProjectile();
     }
     private void MoveProjectile()

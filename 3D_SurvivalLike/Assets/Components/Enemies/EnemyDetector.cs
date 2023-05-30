@@ -45,6 +45,10 @@ public class EnemyDetector : MonoBehaviour
 
     public BaseEnemy GetEnemy()
     {
+        if (closestEnemy == null)
+        {
+            return null;
+        }
         return closestEnemy;
     }
 
