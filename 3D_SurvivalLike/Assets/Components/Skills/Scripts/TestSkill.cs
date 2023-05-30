@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestSkill : BaseSkill
 {
+    //TODO Serialized for test purpose, remove later
     [SerializeField] private float slashRange;
     [SerializeField] private GameObject slashHitEffect;
 
@@ -15,6 +16,7 @@ public class TestSkill : BaseSkill
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         UpdateStats(_SkillData);
+        slashRange = radius;
         mainEffect = GetComponentInChildren<ParticleSystem>();
     }
     // Update is called once per frame

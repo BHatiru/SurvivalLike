@@ -64,7 +64,11 @@ public class LightningArc : BaseSkill
             UpdateArcPoints();
             timer = 0f;
         }
-        //I need to rotate the raycastSource object but independent from the player
+        Cast();
+    }
+
+    private void Cast(){
+                //I need to rotate the raycastSource object but independent from the player
         raycastSource.transform.Rotate(Vector3.up, SPEED_COEFFICIENT*rotationSpeed * Time.deltaTime,  Space.Self);
         // Fire a raycast from the raycast source in the forward direction
         Ray ray = new Ray(raycastSource.transform.position, raycastSource.transform.right);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseSkill : MonoBehaviour
 {
+    protected GameObject VFX;
     protected string skillName;
     protected float damage;
     protected float cooldown;
@@ -18,6 +19,7 @@ public class BaseSkill : MonoBehaviour
 
     protected float timer;
 
+    protected Transform player;
     public SkillData _SkillData;
 
     
@@ -27,6 +29,7 @@ public class BaseSkill : MonoBehaviour
     }
     protected void UpdateStats(SkillData data)
     {
+        VFX = data.SkillVFX;
         SkillData.SkillLevelInfo info = data.UpgradeInfo[Level];
         skillName = info.skillName;
         damage = info.damage;
