@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00b87065f46ef47b3e4bc80850ef11, type: 3}
+  m_Name: LightningArc
+  m_EditorClassIdentifier: 
+  skillIcon: {fileID: 0}
+  SkillVFX: {fileID: 4723954971519659391, guid: f063e8540a0abb14d991b1f4b8dd30ef,
+    type: 3}
+  UpgradeInfo:
+  - skillName: Lightning Arc lvl 1
+    damage: 20
+    cooldown: 0
+    duration: 0
+    quantity: 0
+    radius: 8
+    speed: 4.297

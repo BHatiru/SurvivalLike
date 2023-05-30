@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TestSkill : BaseSkill
 {
-    [SerializeField] private SkillData _SkillData;
     [SerializeField] private float slashRange;
     [SerializeField] private GameObject slashHitEffect;
 

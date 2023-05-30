@@ -16,8 +16,10 @@ MonoBehaviour:
   SkillVFX: {fileID: 2060900179291159282, guid: ca6705a3f9070d14d819d179493bcfa0,
     type: 3}
   UpgradeInfo:
-  - skillName: Skill Slash lvl 1
+  - skillName: Snow Slash lvl 1
     damage: 15
     cooldown: 1.5
     duration: 1
     quantity: 1
+    radius: 0
+    speed: 0
