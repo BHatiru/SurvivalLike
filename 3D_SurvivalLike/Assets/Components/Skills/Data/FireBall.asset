@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   skillIcon: {fileID: 0}
-  SkillPrefab: {fileID: 0}
-  UpgradeInfo: []
+  SkillVFX: {fileID: 1846563170864394, guid: a2a484fa9a073f34397b82c2ab8500f5, type: 3}
+  UpgradeInfo:
+  - skillName: Fire Ball lvl 1
+    damage: 25
+    cooldown: 3
+    duration: 10
+    quantity: 1
+    radius: 0
+    speed: 5

@@ -4,34 +4,58 @@ using UnityEngine;
 
 public class EnemyDetector : MonoBehaviour
 {
-    public List<BaseEnemy> enemies = new List<BaseEnemy>();
-    public float closestDistance = Mathf.Infinity; 
-    public BaseEnemy closestEnemy;
+    [SerializeField] private List<BaseEnemy> enemies = new List<BaseEnemy>();
+    [SerializeField] private float closestDistance;
+    [SerializeField] private BaseEnemy closestEnemy;
 
     [SerializeField] private float _detectionRadius = 40f;
 
-    private void Update()
+    private void FixedUpdate()
     {
         //TODO add detection logic using overlapshere
         FindEnemies();
     }
 
-    private void FindEnemies(){
+    private void FindEnemies()
+    {
+        closestDistance = Mathf.Infinity;
+        enemies.Clear();
         Collider[] colliders = Physics.OverlapSphere(transform.position, _detectionRadius);
-        
+
         foreach (Collider col in colliders)
         {
-            if (col.GetComponent<BaseEnemy>() != null)
+            //check if the collider is an enemy and not the trigger collider
+            if (col.GetComponent<BaseEnemy>() != null && col.isTrigger == false)
             {
                 enemies.Add(col.GetComponent<BaseEnemy>());
-                float distance = Vector3.Distance(transform.position, col.transform.position);
-                if (distance < closestDistance)
+                
+                if (enemies.Count > 0)
                 {
-                    closestDistance = distance;
-                    closestEnemy = col.GetComponent<BaseEnemy>();
+                    float distance = Vector3.Distance(transform.position, col.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestEnemy = col.GetComponent<BaseEnemy>();
+                    }
+                    
                 }
             }
         }
+    }
+
+    public BaseEnemy GetEnemy()
+    {
+        return closestEnemy;
+    }
+
+    public List<BaseEnemy> GetEnemies()
+    {
+        return enemies;
+    }
+
+    public float GetClosestDistance()
+    {
+        return closestDistance;
     }
 
 }

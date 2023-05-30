@@ -20,6 +20,7 @@ public class BaseEnemy : MonoBehaviour
     {
         _enemy = GetComponent<NavMeshAgent>();
         _target = GameObject.FindGameObjectWithTag("Player");
+        InitializeStats();
     }
 
     void InitializeStats()
@@ -42,7 +43,9 @@ public class BaseEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         health -= damage;
+        Debug.Log("Enemy registered damage");
         if (health <= 0f)
         {
             Die();
@@ -71,7 +74,6 @@ public class BaseEnemy : MonoBehaviour
             }
         }
     }
-
     private void CollisionDamage()
     {
         if (_player == null)

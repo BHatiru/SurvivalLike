@@ -18,6 +18,8 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(_camera.transform);
+        //Healthbar always faces camera but do not change z and
+        transform.LookAt(transform.position + _camera.transform.rotation * Vector3.forward,
+            _camera.transform.rotation * Vector3.up);
     }
 }

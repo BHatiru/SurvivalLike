@@ -24400,7 +24400,7 @@ MonoBehaviour:
   rotateAmount: 45
   bounce: 0
   bounceForce: 10
-  speed: 35
+  speed: 5
   accuracy: 95
   fireRate: 1
   muzzlePrefab: {fileID: 1232470965182556, guid: 51bd01b23e91fda4bad128a9d11ac143,
@@ -24435,7 +24435,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846563170864394}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

@@ -19,6 +19,10 @@ public class TestTools : MonoBehaviour
         {
             Time.timeScale *=_speedModifier; 
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Time.timeScale /= _speedModifier;
+        }
         if (Input.GetKeyDown(KeyCode.T))
         {
             Time.timeScale = 1f;
@@ -27,5 +31,6 @@ public class TestTools : MonoBehaviour
         {
             Time.timeScale = 0f;
         }
+
     }
 }

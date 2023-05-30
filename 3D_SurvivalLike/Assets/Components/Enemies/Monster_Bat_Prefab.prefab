@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585175365917768621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 576580473303397951}
   - component: {fileID: 713568856239894665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 584905117218558219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 577017828718263465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 2983538256119706620}
   - component: {fileID: 3395193073654378892}
   - component: {fileID: 2592027464351739062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Monster_Bat_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,6 +301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565bff61e0847a041992a10ac4f64053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  health: 15
+  damage: 2
 --- !u!135 &2592027464351739062
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentHealth -= damage;
         _healthBar.UpdateHealthBar(_currentHealth, _maxHealth);
-        Debug.Log("Player took " + damage + " damage");
+        // Debug.Log("Player took " + damage + " damage");
         if (_currentHealth <= 0f)
         {
             Die();
