@@ -18,7 +18,7 @@ public class SkillData : ScriptableObject
         public float damage;
         public float cooldown;
         public float duration;
-        public float quantity;
+        public int quantity;
         public float radius;
         public float speed;
     }

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class LightningArc : BaseSkill
 {
-    [SerializeField] private float damageAmount = 20f;  // Amount of damage to apply
-    [SerializeField] private float skillRange = 8f;  // Range of the skill
-    public float rotationSpeed = 4.3f;  // Speed of rotation for the raycast
+    [SerializeField] private float rotationSpeed = 4.3f;  // Speed of rotation for the raycast
 
 
     private const int SPEED_COEFFICIENT = 20;  // Coefficient for the speed of rotation
+    private ArcAnimation _arcAnimation;  // Reference to the ArcAnimation component
 
     //TODO Temporary element needed for development, should be removed later
     [SerializeField] private LineRenderer lineRenderer;  // Reference to the LineRenderer component
@@ -20,9 +19,10 @@ public class LightningArc : BaseSkill
 
     private void Start()
     {
+        _arcAnimation = GetComponent<ArcAnimation>();
         UpdateStats(_SkillData);
-       // SetArcPoints();
         VarRename();
+        _arcAnimation.SetArcRadius(radius);
         raycastSource.transform.SetParent(transform);
         // Create the raycast source object at the player's position and rotation
         lineRenderer.positionCount = 2;
@@ -30,8 +30,6 @@ public class LightningArc : BaseSkill
     }
 
     private void VarRename(){
-        damageAmount = damage;
-        skillRange = radius;
         rotationSpeed = speed;
     }
 
@@ -39,12 +37,13 @@ public class LightningArc : BaseSkill
     {
 
         timer += Time.deltaTime;
-        if (timer >= 0.07f)
+        if (timer >= _arcAnimation.noiseFrequency)
         {
-            //UpdateArcPoints();
+            _arcAnimation.CreateNoise();
             timer = 0f;
         }
         Cast();
+        _arcAnimation.RotateArc(rotationSpeed*SPEED_COEFFICIENT);
     }
 
     private void Cast(){
@@ -53,7 +52,7 @@ public class LightningArc : BaseSkill
         // Fire a raycast from the raycast source in the forward direction
         Ray ray = new Ray(raycastSource.transform.position, raycastSource.transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, skillRange))
+        if (Physics.Raycast(ray, out hit, radius))
         {
             // Check if the raycast hit an enemy
             BaseEnemy enemy = hit.collider.GetComponent<BaseEnemy>();
@@ -63,7 +62,7 @@ public class LightningArc : BaseSkill
                 hitEffect.GetComponent<ParticleSystem>().Play();
                 Destroy(hitEffect, 0.5f);
                 // Apply damage to the enemy
-                enemy.TakeDamage(damageAmount);
+                enemy.TakeDamage(damage);
             }
             lineRenderer.SetPosition(0, ray.origin);
             lineRenderer.SetPosition(1, hit.point);
@@ -71,7 +70,7 @@ public class LightningArc : BaseSkill
         else
         {
             // If the raycast didn't hit anything, set the endpoint to the maximum range
-            Vector3 endpoint = ray.origin + ray.direction * skillRange;
+            Vector3 endpoint = ray.origin + ray.direction * radius;
             lineRenderer.SetPosition(0, ray.origin);
             lineRenderer.SetPosition(1, endpoint);
         }

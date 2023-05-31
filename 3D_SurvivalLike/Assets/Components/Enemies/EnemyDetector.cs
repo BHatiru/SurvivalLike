@@ -43,7 +43,8 @@ public class EnemyDetector : MonoBehaviour
         }
     }
 
-    public BaseEnemy GetEnemy()
+    //method to get the closest enemy
+    public BaseEnemy GetClosestEnemy()
     {
         if (closestEnemy == null)
         {
@@ -52,6 +53,16 @@ public class EnemyDetector : MonoBehaviour
         return closestEnemy;
     }
 
+    //method to get random enemy, used for the lightning strike
+    public BaseEnemy GetRandomEnemy()
+    {
+        if (enemies.Count == 0)
+        {
+            return null;
+        }
+        return enemies[Random.Range(0, enemies.Count)];
+    }
+    //method to get all enemies
     public List<BaseEnemy> GetEnemies()
     {
         return enemies;

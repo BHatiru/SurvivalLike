@@ -9969,11 +9969,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _SkillData: {fileID: 11400000, guid: 3ecd0ce5c5cdbd140afe0ae126ea9c4b, type: 2}
-  damageAmount: 20
-  skillRange: 8
-  rotationSpeed: 4.3
+  rotationSpeed: 8
   lineRenderer: {fileID: 3210975951723384837}
   raycastSource: {fileID: 3210975951323045802}
+  _hitEffect: {fileID: 2965222256817593503, guid: a164e676dbbd6e54587237e619372c98,
+    type: 3}
 --- !u!120 &3210975951723384837
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -10090,8 +10090,9 @@ MonoBehaviour:
   _arcPoint2OrignalPosition: {fileID: 1315601820}
   _arcPoint3: {fileID: 7854684128186471100}
   _arcPoint3OrignalPosition: {fileID: 1174331229}
-  _noisePower: 0.5
-  _noiseFrequency: 20
+  _arcEndPoint: {fileID: 7854684127875674448}
+  noisePower: 1
+  noiseFrequency: 20
 --- !u!1 &7854684127115517580
 GameObject:
   m_ObjectHideFlags: 0
@@ -10139,7 +10140,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854684127501087663}
-  - component: {fileID: 7854684127501087660}
   m_Layer: 7
   m_Name: ArcSourcePoint
   m_TagString: Untagged
@@ -10162,21 +10162,6 @@ Transform:
   m_Father: {fileID: 7854684127115517579}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7854684127501087660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7854684127501087648}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea538c957f5e1041a2963225ca2fb3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  orbitSpeed: -1.5
-  radius: 0.5
 --- !u!1 &7854684127875674449
 GameObject:
   m_ObjectHideFlags: 0
@@ -10186,7 +10171,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854684127875674448}
-  - component: {fileID: 3210975952864276040}
   m_Layer: 7
   m_Name: ArcEndPoint
   m_TagString: Untagged
@@ -10210,21 +10194,6 @@ Transform:
   m_Father: {fileID: 7854684127115517579}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3210975952864276040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7854684127875674449}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea538c957f5e1041a2963225ca2fb3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  orbitSpeed: -1.5
-  radius: 8
 --- !u!1 &7854684128186471101
 GameObject:
   m_ObjectHideFlags: 0
@@ -10234,7 +10203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854684128186471100}
-  - component: {fileID: 7854684128186471098}
   m_Layer: 7
   m_Name: Pos3
   m_TagString: Untagged
@@ -10257,21 +10225,6 @@ Transform:
   m_Father: {fileID: 7854684127115517579}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7854684128186471098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7854684128186471101}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea538c957f5e1041a2963225ca2fb3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  orbitSpeed: 1.3
-  radius: 3.5
 --- !u!1 &7854684128289482499
 GameObject:
   m_ObjectHideFlags: 0
@@ -10349,13 +10302,13 @@ VisualEffect:
       - m_Value: {x: 0, y: 1.0799999, z: 0}
         m_Name: Pos1
         m_Overridden: 1
-      - m_Value: {x: 0, y: 1.0799999, z: 2.46013}
+      - m_Value: {x: 2.4601302, y: 1.0799999, z: -0.00000023841858}
         m_Name: Pos2
         m_Overridden: 1
-      - m_Value: {x: 0, y: 1.0799999, z: 4.738775}
+      - m_Value: {x: 4.7387753, y: 1.0799999, z: -0.00000047683716}
         m_Name: Pos3
         m_Overridden: 1
-      - m_Value: {x: 0, y: 1.0799999, z: 7.303763}
+      - m_Value: {x: 7.303764, y: 1.0799999, z: -0.0000009536743}
         m_Name: Pos4
         m_Overridden: 1
     m_Vector4f:
@@ -10511,7 +10464,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854684128727282235}
-  - component: {fileID: 7854684128727282232}
   m_Layer: 7
   m_Name: Pos2
   m_TagString: Untagged
@@ -10534,18 +10486,3 @@ Transform:
   m_Father: {fileID: 7854684127115517579}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7854684128727282232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7854684128727282236}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea538c957f5e1041a2963225ca2fb3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  orbitSpeed: -1.8
-  radius: 2

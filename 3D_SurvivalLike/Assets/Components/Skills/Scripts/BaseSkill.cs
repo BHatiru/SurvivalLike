@@ -9,7 +9,7 @@ public class BaseSkill : MonoBehaviour
     protected float damage;
     protected float cooldown;
     protected float duration;
-    protected float quantity;
+    protected int quantity;
     protected float radius;
 
     protected float speed;

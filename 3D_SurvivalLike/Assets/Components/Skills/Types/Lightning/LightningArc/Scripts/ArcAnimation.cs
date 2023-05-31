@@ -11,39 +11,27 @@ public class ArcAnimation : MonoBehaviour
     [SerializeField] private Transform _arcPoint3;
     [SerializeField] private Transform _arcPoint3OrignalPosition;
 
-    
-    private LightningArc _lightningArc;
-    [SerializeField] private float _noisePower = 1f;
-    [SerializeField] private float _noiseFrequency = 20f;
-    private float timer;
+    [SerializeField] private Transform _arcEndPoint;
 
-    private const int SPEED_COEFFICIENT = 20; 
-    void Start()
+    public float noisePower = 1f;
+    public float noiseFrequency = 20f;
+
+    public void SetArcRadius(float radius)
     {
-        _lightningArc = GetComponent<LightningArc>();
+        // set the end point of the arc to the radius, dont change the y position
+        _arcEndPoint.position = transform.forward * radius; 
+        _arcEndPoint.position = new Vector3(_arcEndPoint.position.x, 1f, _arcEndPoint.position.z);
     }
-
-    private void Update()
-    {
-        RotateArc();
-        timer += Time.deltaTime;
-        if (timer > 1/_noiseFrequency)
-        {
-            timer = 0f;
-            CreateNoise();
-        }
-    }
-
     // create a noise by moving the intermediate points of the arc to the left and right periodically
-    private void CreateNoise()
+    public void CreateNoise()
     {
-        _arcPoint2.localPosition = _arcPoint2OrignalPosition.localPosition + new Vector3(Random.Range(-_noisePower, _noisePower), 0f, Random.Range(-_noisePower, _noisePower));
-        _arcPoint3.localPosition = _arcPoint3OrignalPosition.localPosition - new Vector3(Random.Range(-_noisePower, _noisePower), 0f, Random.Range(-_noisePower, _noisePower));
+        _arcPoint2.localPosition = _arcPoint2OrignalPosition.localPosition + new Vector3(Random.Range(-noisePower, noisePower), 0f, Random.Range(-noisePower, noisePower));
+        _arcPoint3.localPosition = _arcPoint3OrignalPosition.localPosition - new Vector3(Random.Range(-noisePower, noisePower), 0f, Random.Range(-noisePower, noisePower));
     }
 
-    private void RotateArc()
+    public void RotateArc(float rotationSpeed)
     {
         // rotate the arc to face the target
-        _arcVFX.transform.Rotate(Vector3.up, SPEED_COEFFICIENT *_lightningArc.rotationSpeed * Time.deltaTime,  Space.Self);
+        _arcVFX.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime,  Space.Self);
     }
 }

@@ -41,7 +41,7 @@ public class FireBallCaster : BaseSkill
 
     private void Cast()
     {
-        BaseEnemy target = detector.GetEnemy();
+        BaseEnemy target = detector.GetClosestEnemy();
         if (target == null)
         {
             return;
