@@ -1,7 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
+
+[Serializable]
+public class EnemyStats{
+    public float speed= 2f;
+    public float health=15f;
+    public float damage=2f;
+}
 public class BaseEnemy : MonoBehaviour
 {
     private NavMeshAgent _enemy;
@@ -9,10 +17,13 @@ public class BaseEnemy : MonoBehaviour
     private GameObject _target;
     private PlayerHealth _player;
     private float damageCooldown = 0.5f;  
-    private float damageTimer = 0f;      
-    [SerializeField] private float speed;
-    [SerializeField] private float health=15f;
-    [SerializeField] private float damage=2f;
+    private float damageTimer = 0f;
+    public EnemyStats stats;     
+
+    [SerializeField] private EnemyData _enemyData;
+
+    [SerializeField] private GameObject _damageText;
+
     public event System.Action OnDeath;
     
     // Start is called before the first frame update
@@ -25,8 +36,9 @@ public class BaseEnemy : MonoBehaviour
 
     void InitializeStats()
     {
-        //TODO create scribtable objects to store enemy stats
-        _enemy.speed = speed;
+        stats.damage = _enemyData.enemyStats.damage;
+        stats.health = _enemyData.enemyStats.health;
+        stats.speed = _enemyData.enemyStats.speed;
     }
 
     // Update is called once per frame
@@ -43,15 +55,30 @@ public class BaseEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        
-        health -= damage;
+        Damage(damage);
+    }
+
+    //Overload for delayed damage
+    public void TakeDamage(float damage, float delay)
+    {
+        StartCoroutine(DamageDelay(damage, delay));
+    }
+
+    private void Damage(float damage){
+        stats.health -= damage;
+        DamageIndicator indicator = Instantiate(_damageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        indicator.SetDamageText(damage);
         Debug.Log("Enemy registered damage");
-        if (health <= 0f)
+        if (stats.health <= 0f)
         {
             Die();
         }
     }
-
+    IEnumerator DamageDelay(float damage, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Damage(damage);
+    }
 
     public void Die()
     {
@@ -80,6 +107,6 @@ public class BaseEnemy : MonoBehaviour
         {
             _player = _target.GetComponent<PlayerHealth>();
         }
-        _player.TakeDamage(damage);
+        _player.TakeDamage(stats.damage);
     }
 }

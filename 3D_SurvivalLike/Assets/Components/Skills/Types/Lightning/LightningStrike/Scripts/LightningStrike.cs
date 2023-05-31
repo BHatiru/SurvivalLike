@@ -7,15 +7,19 @@ public class LightningStrike : BaseSkill
     [SerializeField] private float _impactRadius;   //radius of the lightning strike hit exploision
     [SerializeField] private float _heightOffset;   //height offset of the lightning strike
     EnemyDetector detector;
+    private float distance;
     void Start()
     {
         UpdateStats(_SkillData);
-        detector = player.GetComponent<EnemyDetector>();
+        //create a new enemy detector isntance and set its position to the player position
+        detector = gameObject.AddComponent<EnemyDetector>();
+        detector.transform.position = transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        detector.FindEnemies(radius);
         timer += Time.deltaTime;
         if (timer >= cooldown)
         {
@@ -23,14 +27,25 @@ public class LightningStrike : BaseSkill
             timer = 0f;
         }
     }
-    
-    public void Cast(){
-        BaseEnemy[] targets = new BaseEnemy[quantity];
-        //cast several lightning strikes based on quantity
+
+    public void Cast()
+    {
+        //cast several lightning strikes based on quantity with small delay between each strike
+        StartCoroutine(ConsequtiveDelayedStrikes(0.2f));
+    }
+
+    //method to delay the lightning strike
+    public IEnumerator ConsequtiveDelayedStrikes(float delay)
+    {
         for (int i = 0; i < quantity; i++)
         {
-            targets[i] = detector.GetRandomEnemy();
-            Vector3 enemyPos = targets[i].transform.position;
+            BaseEnemy target = detector.GetRandomEnemy();
+            if (target == null)
+            {
+                yield break;
+            }
+            distance = Vector3.Distance(transform.position, target.transform.position);
+            Vector3 enemyPos = target.transform.position;
             //Spawn effect above the enemy
             SpawnLightningStrike(new Vector3(enemyPos.x, enemyPos.y + _heightOffset, enemyPos.z));
             //Damage the target enemy and all enemies in the impact radius
@@ -39,19 +54,13 @@ public class LightningStrike : BaseSkill
             {
                 if (col.GetComponent<BaseEnemy>() != null && col.isTrigger == false)
                 {
-                    col.GetComponent<BaseEnemy>().TakeDamage(damage);
+                    col.GetComponent<BaseEnemy>().TakeDamage(damage, 0.2f);
                 }
             }
-        }
-        
-        if (targets == null)
-        {
-            return;
+            yield return new WaitForSeconds(delay);
         }
         
     }
-
-    //method that finds random enemy in the radius
 
 
 
@@ -62,7 +71,8 @@ public class LightningStrike : BaseSkill
         Destroy(lightningStrike, duration);
     }
 
-    private void OnDrawGizmosSelected() {
+    private void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, radius);
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _enemyPrefabs;
     [SerializeField] private float _spawnRate = 5f;
     [SerializeField] private Vector2 _spawnArea = new Vector2(10f, 10f);
     [SerializeField] private int _minEnemies = 5;
     [SerializeField] private int _maxEnemies = 10;
-    [SerializeField] private int _enemyIndex = 0;
+    [SerializeField] private EnemyData _enemy;
+    [SerializeField] private List<EnemyData> _enemies;
     [SerializeField] private Transform _player;
 
     private float _spawnTimer = 0f;
@@ -53,10 +53,10 @@ public class EnemyGenerator : MonoBehaviour
         return randomPos;    
     }
 
-    public void SpawnEnemy(int enemyIndex)
+    public void SpawnEnemy(EnemyData enemyData)
     {
         Vector3 spawnPos = RandomPositionAroundPlayer();
-        GameObject enemy = Instantiate(_enemyPrefabs[enemyIndex], spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyData.enemyPrefab, spawnPos, Quaternion.identity);
         enemy.transform.LookAt(_player);
     }
 
@@ -65,7 +65,7 @@ public class EnemyGenerator : MonoBehaviour
         int randomNum = Random.Range(_minEnemies, _maxEnemies);
         for (int i = 0; i < randomNum; i++)
         {
-            SpawnEnemy(_enemyIndex);
+            SpawnEnemy(_enemy);
         }
     }
 

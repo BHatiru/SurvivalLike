@@ -22,7 +22,10 @@ public class BaseSkill : MonoBehaviour
     protected Transform player;
     public SkillData _SkillData;
 
-    
+    protected void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     protected void SetActive()
     {
         IsActive = true;

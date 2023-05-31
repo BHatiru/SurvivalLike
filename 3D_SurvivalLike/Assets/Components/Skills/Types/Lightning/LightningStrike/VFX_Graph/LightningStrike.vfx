@@ -27,22 +27,10 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614555}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614631}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614600}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614635}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614558}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614580}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614646}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614644}
@@ -74,31 +62,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614657}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614702}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614661}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614687}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614717}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614692}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614695}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614723}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614696}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614706}
       id: 0
       isStickyNote: 0
   - title: Glow
@@ -159,39 +129,21 @@ MonoBehaviour:
   - title: Sparks
     position:
       serializedVersion: 2
-      x: 4012
-      y: -199
+      x: 4212
+      y: -267
       width: 612
-      height: 1635
+      height: 1863
     contents:
     - model: {fileID: 8926484042661614898}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614902}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614917}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614928}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614931}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614933}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614936}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614937}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614939}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614896}
@@ -237,9 +189,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 456
-    y: -252
+    y: -267
     width: 5292
-    height: 1916
+    height: 1863
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3734,7 +3686,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614718}
       inputSlot: {fileID: 8926484042661614967}
-    position: {x: 4057, y: 1500}
+    position: {x: 4257, y: 1432}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
@@ -7099,7 +7051,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614897}
       inputSlot: {fileID: 8926484042661614952}
-    position: {x: 4037, y: -66}
+    position: {x: 4237, y: -134}
     expandedSlots: []
     expanded: 0
   - m_Id: 2
@@ -7162,7 +7114,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614949}
-  m_UIPosition: {x: 4175, y: -140}
+  m_UIPosition: {x: 4375, y: -208}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7199,7 +7151,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614917}
   - {fileID: 8926484042661614943}
   - {fileID: 8926484042661614928}
-  m_UIPosition: {x: 4175, y: 166}
+  m_UIPosition: {x: 4375, y: 98}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -8079,7 +8031,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.15
+      m_SerializableObject: 0.08
     m_Space: 2147483647
   m_Property:
     name: A
@@ -8113,7 +8065,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.5
+      m_SerializableObject: 0.2
     m_Space: 2147483647
   m_Property:
     name: B
@@ -8137,7 +8089,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 4175, y: 717}
+  m_UIPosition: {x: 4375, y: 649}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -8177,7 +8129,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614953}
   - {fileID: 8926484042661614939}
   - {fileID: 8926484042661614966}
-  m_UIPosition: {x: 4175, y: 848}
+  m_UIPosition: {x: 4375, y: 780}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:

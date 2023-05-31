@@ -15,7 +15,7 @@ TagManager:
   - Player
   - Skill
   - Enemy
-  - 
+  - InGameUI
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: Entities
     uniqueID: 1095265693
+    locked: 0
+  - name: UI
+    uniqueID: 3900843231
     locked: 0

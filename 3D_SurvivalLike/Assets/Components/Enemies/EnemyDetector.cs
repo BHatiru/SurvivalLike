@@ -10,17 +10,12 @@ public class EnemyDetector : MonoBehaviour
 
     [SerializeField] private float _detectionRadius = 40f;
 
-    private void FixedUpdate()
-    {
-        //TODO add detection logic using overlapshere
-        FindEnemies();
-    }
 
-    private void FindEnemies()
+    public void FindEnemies(float radius)
     {
         closestDistance = Mathf.Infinity;
         enemies.Clear();
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _detectionRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider col in colliders)
         {
@@ -42,7 +37,6 @@ public class EnemyDetector : MonoBehaviour
             }
         }
     }
-
     //method to get the closest enemy
     public BaseEnemy GetClosestEnemy()
     {

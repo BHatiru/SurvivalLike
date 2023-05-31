@@ -281,7 +281,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 6
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -301,9 +301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565bff61e0847a041992a10ac4f64053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 15
-  damage: 2
+  stats:
+    speed: 3
+    health: 15
+    damage: 2
+  _enemyData: {fileID: 11400000, guid: fe73a482912b97f4c9f67b36c817a26c, type: 2}
+  _damageText: {fileID: 6531534031383636946, guid: 9a23eb4648079904ebfcaddaf27e8ba8,
+    type: 3}
 --- !u!135 &2592027464351739062
 SphereCollider:
   m_ObjectHideFlags: 0

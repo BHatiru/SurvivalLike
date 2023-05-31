@@ -503,9 +503,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565bff61e0847a041992a10ac4f64053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 0
-  damage: 1
+  stats:
+    speed: 1
+    health: 15
+    damage: 2
+  _enemyData: {fileID: 11400000, guid: af8aa7823c611674bbf11912de24ee16, type: 2}
+  _damageText: {fileID: 6531534031383636946, guid: 9a23eb4648079904ebfcaddaf27e8ba8,
+    type: 3}
 --- !u!135 &7932394463578963399
 SphereCollider:
   m_ObjectHideFlags: 0

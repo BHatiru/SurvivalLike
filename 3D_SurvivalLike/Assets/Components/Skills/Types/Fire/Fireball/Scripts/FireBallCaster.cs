@@ -22,7 +22,6 @@ public class FireBallCaster : BaseSkill
     EnemyDetector detector;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         detector = player.GetComponent<EnemyDetector>();
         UpdateStats(_SkillData);
         Damage = damage;
@@ -31,6 +30,7 @@ public class FireBallCaster : BaseSkill
 
     void Update()
     {
+        detector.FindEnemies(radius);
         timer += Time.deltaTime;
         if (timer >= cooldown)
         {
