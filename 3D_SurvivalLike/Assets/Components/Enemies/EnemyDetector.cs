@@ -8,9 +8,6 @@ public class EnemyDetector : MonoBehaviour
     [SerializeField] private float closestDistance;
     [SerializeField] private BaseEnemy closestEnemy;
 
-    [SerializeField] private float _detectionRadius = 40f;
-
-
     public void FindEnemies(float radius)
     {
         closestDistance = Mathf.Infinity;

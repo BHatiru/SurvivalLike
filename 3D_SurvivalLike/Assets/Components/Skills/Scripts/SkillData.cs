@@ -7,7 +7,7 @@ public class SkillData : ScriptableObject
 
     public Sprite skillIcon;
     public GameObject SkillPrefab;
-    public GameObject SkillHolder;
+    public GameObject SkillCaster;
     public List<SkillLevelInfo> UpgradeInfo;
     internal string skillName;
 

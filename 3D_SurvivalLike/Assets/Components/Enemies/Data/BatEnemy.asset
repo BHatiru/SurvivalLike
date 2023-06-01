@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a439d02c006812c45a0e4b5c10c1b390, type: 3}
   m_Name: BatEnemy
   m_EditorClassIdentifier: 
-  enemyName: 
-  enemyPrefab: {fileID: 0}
+  enemyName: Bat Enemy
+  enemyPrefab: {fileID: 579626421458405399, guid: a2f91f86156c4f748b09102a3a7d2430,
+    type: 3}
   enemyStats:
-    speed: 2
+    speed: 5
     health: 15
-    damage: 2
+    damage: 1

@@ -1033,7 +1033,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -4917,9 +4917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5cbe0b8f51d2204f9b42ff405666765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SkillData: {fileID: 11400000, guid: 1ba0ce265b3a1264f8c87cc39ed8bd53, type: 2}
-  slashRange: 2.25
-  slashHitEffect: {fileID: 2965222256817593503, guid: a164e676dbbd6e54587237e619372c98,
+  _slashHitEffect: {fileID: 4924508274929071776, guid: 0edef91621bb6b34384ccc9dbb98729c,
     type: 3}
 --- !u!1 &5014488988682114625
 GameObject:

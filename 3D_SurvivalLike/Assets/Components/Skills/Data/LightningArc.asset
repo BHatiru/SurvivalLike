@@ -15,12 +15,27 @@ MonoBehaviour:
   skillIcon: {fileID: 21300000, guid: ebaef5902556fef44b513ae4e893d599, type: 3}
   SkillPrefab: {fileID: 3210975951723384858, guid: c40426b30f428f24a93d879f76106b84,
     type: 3}
-  SkillHolder: {fileID: 0}
+  SkillCaster: {fileID: 4502308284652850266, guid: f852d9fe7792a114faabf5c53d789451,
+    type: 3}
   UpgradeInfo:
   - skillName: Lightning Arc lvl 1
     damage: 20
     cooldown: 0
     duration: 0
-    quantity: 0
+    quantity: 1
     radius: 8
     speed: 8
+  - skillName: Lightning Arc lvl 1
+    damage: 35
+    cooldown: 0
+    duration: 0
+    quantity: 2
+    radius: 8
+    speed: 14
+  - skillName: Lightning Arc lvl 1
+    damage: 60
+    cooldown: 0
+    duration: 0
+    quantity: 4
+    radius: 10
+    speed: 18

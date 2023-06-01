@@ -24362,7 +24362,7 @@ GameObject:
   - component: {fileID: 135447165041960418}
   - component: {fileID: 8169528356729294075}
   m_Layer: 7
-  m_Name: vfx_FireBall
+  m_Name: FireballProfectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24426,7 +24426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitPrefab: {fileID: 1183852268493988, guid: 524e1f348f3798444b3623e8b326561f, type: 3}
-  _explosionRadius: 1.5
+  _explosionRadius: 2.5
 --- !u!1 &1915593564425164
 GameObject:
   m_ObjectHideFlags: 0

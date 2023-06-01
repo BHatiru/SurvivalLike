@@ -1,67 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1174331228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1174331229}
-  m_Layer: 7
-  m_Name: Pos3 Orig
-  m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1174331229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174331228}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7854684127115517579}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1315601819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1315601820}
-  m_Layer: 7
-  m_Name: Pos2 Orig
-  m_TagString: Untagged
-  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1315601820
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315601819}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.22}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7854684127115517579}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &478705179884192523
 GameObject:
   m_ObjectHideFlags: 0
@@ -9837,37 +9775,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &3210975951323045802
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3210975951323045803}
-  m_Layer: 7
-  m_Name: RaycastSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3210975951323045803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3210975951323045802}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3210975951723384859}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3210975951723384858
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,7 +9788,6 @@ GameObject:
   - component: {fileID: 3210975951723384857}
   - component: {fileID: 3210975951723384836}
   - component: {fileID: 3210975951723384837}
-  - component: {fileID: 791560628}
   m_Layer: 7
   m_Name: LightningArc
   m_TagString: Untagged
@@ -9901,7 +9807,6 @@ Transform:
   m_LocalScale: {x: 0.08053467, y: 0.38570932, z: 0.08053467}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3210975951323045803}
   - {fileID: 7854684127115517579}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -9968,10 +9873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc0876d6b711a448b4028333349695c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SkillData: {fileID: 11400000, guid: 3ecd0ce5c5cdbd140afe0ae126ea9c4b, type: 2}
-  rotationSpeed: 8
+  rayOffset: 0.5
+  _arcEndPoint: {fileID: 7854684127875674448}
   lineRenderer: {fileID: 3210975951723384837}
-  raycastSource: {fileID: 3210975951323045802}
   _hitEffect: {fileID: 2965222256817593503, guid: a164e676dbbd6e54587237e619372c98,
     type: 3}
 --- !u!120 &3210975951723384837
@@ -10073,26 +9977,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &791560628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3210975951723384858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92421d9cd0f06204f9d9bc21e83f37f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _arcVFX: {fileID: 7854684127115517579}
-  _arcPoint2: {fileID: 7854684128727282235}
-  _arcPoint2OrignalPosition: {fileID: 1315601820}
-  _arcPoint3: {fileID: 7854684128186471100}
-  _arcPoint3OrignalPosition: {fileID: 1174331229}
-  _arcEndPoint: {fileID: 7854684127875674448}
-  noisePower: 1
-  noiseFrequency: 20
 --- !u!1 &7854684127115517580
 GameObject:
   m_ObjectHideFlags: 0
@@ -10126,10 +10010,8 @@ Transform:
   - {fileID: 7854684128727282235}
   - {fileID: 7854684128186471100}
   - {fileID: 7854684127875674448}
-  - {fileID: 1315601820}
-  - {fileID: 1174331229}
   m_Father: {fileID: 3210975951723384859}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7854684127501087648
 GameObject:
@@ -10299,16 +10181,16 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 0, y: 1.0799999, z: 0}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Pos1
         m_Overridden: 1
-      - m_Value: {x: 2.4601302, y: 1.0799999, z: -0.00000023841858}
+      - m_Value: {x: 0, y: 0, z: 2.46013}
         m_Name: Pos2
         m_Overridden: 1
-      - m_Value: {x: 4.7387753, y: 1.0799999, z: -0.00000047683716}
+      - m_Value: {x: 0, y: 0, z: 4.738775}
         m_Name: Pos3
         m_Overridden: 1
-      - m_Value: {x: 7.303764, y: 1.0799999, z: -0.0000009536743}
+      - m_Value: {x: 0, y: 0, z: 7.303763}
         m_Name: Pos4
         m_Overridden: 1
     m_Vector4f:

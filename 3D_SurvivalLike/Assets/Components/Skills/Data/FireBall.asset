@@ -15,7 +15,7 @@ MonoBehaviour:
   skillIcon: {fileID: 21300000, guid: 2c5d7653130803e4395dff8379356811, type: 3}
   SkillPrefab: {fileID: 1846563170864394, guid: a2a484fa9a073f34397b82c2ab8500f5,
     type: 3}
-  SkillHolder: {fileID: 2364008815042740295, guid: 2f7adf87f89a3d84a90f2e457b95c327,
+  SkillCaster: {fileID: 2364008815042740295, guid: 2f7adf87f89a3d84a90f2e457b95c327,
     type: 3}
   UpgradeInfo:
   - skillName: Fire Ball lvl 1

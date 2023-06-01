@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningStrike : BaseSkill
+public class LightningStrike : BaseSkill, ICastable
 {
     [SerializeField] private float _impactRadius;   //radius of the lightning strike hit exploision
     [SerializeField] private float _heightOffset;   //height offset of the lightning strike
@@ -16,6 +16,14 @@ public class LightningStrike : BaseSkill
         detector.transform.position = transform.position;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            UpdateStats(_SkillData);
+        }
+
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -59,7 +67,7 @@ public class LightningStrike : BaseSkill
             }
             yield return new WaitForSeconds(delay);
         }
-        
+
     }
 
 
@@ -67,7 +75,7 @@ public class LightningStrike : BaseSkill
     //method to spawn the lightning strike and destroy the effect after a certain amount of time
     public void SpawnLightningStrike(Vector3 position)
     {
-        GameObject lightningStrike = Instantiate(VFX, position, Quaternion.identity);
+        GameObject lightningStrike = Instantiate(VFX_skillObj, position, Quaternion.identity);
         Destroy(lightningStrike, duration);
     }
 

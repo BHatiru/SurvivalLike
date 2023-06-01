@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseSkill : MonoBehaviour
 {
-    protected GameObject VFX;
+    protected GameObject VFX_skillObj;
     protected string skillName;
     protected float damage;
     protected float cooldown;
@@ -14,7 +14,7 @@ public class BaseSkill : MonoBehaviour
 
     protected float speed;
 
-    protected int Level;
+    [SerializeField] protected int Level;
     protected bool IsActive;
 
     protected float timer;
@@ -32,7 +32,7 @@ public class BaseSkill : MonoBehaviour
     }
     protected void UpdateStats(SkillData data)
     {
-        VFX = data.SkillPrefab;
+        VFX_skillObj = data.SkillPrefab;
         SkillData.SkillLevelInfo info = data.UpgradeInfo[Level];
         skillName = info.skillName;
         damage = info.damage;
@@ -42,6 +42,7 @@ public class BaseSkill : MonoBehaviour
         radius = info.radius;
         speed = info.speed;
     }
+
 
     protected void UpdateModel()
     {

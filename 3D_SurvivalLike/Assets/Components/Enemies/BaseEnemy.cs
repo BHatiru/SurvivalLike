@@ -39,6 +39,7 @@ public class BaseEnemy : MonoBehaviour
         stats.damage = _enemyData.enemyStats.damage;
         stats.health = _enemyData.enemyStats.health;
         stats.speed = _enemyData.enemyStats.speed;
+        _enemy.speed = stats.speed;
     }
 
     // Update is called once per frame
@@ -66,13 +67,20 @@ public class BaseEnemy : MonoBehaviour
 
     private void Damage(float damage){
         stats.health -= damage;
-        DamageIndicator indicator = Instantiate(_damageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
-        indicator.SetDamageText(damage);
+        if(AmountOfDamageTexts() < 150){
+            DamageIndicator indicator = Instantiate(_damageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+            indicator.SetDamageText(damage);
+        }
+        
         Debug.Log("Enemy registered damage");
         if (stats.health <= 0f)
         {
             Die();
         }
+    }
+
+    private int AmountOfDamageTexts(){
+        return FindObjectsOfType<DamageIndicator>().Length;
     }
     IEnumerator DamageDelay(float damage, float delay)
     {

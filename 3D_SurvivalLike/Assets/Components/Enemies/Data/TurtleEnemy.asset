@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a439d02c006812c45a0e4b5c10c1b390, type: 3}
   m_Name: TurtleEnemy
   m_EditorClassIdentifier: 
-  enemyName: 
-  enemyPrefab: {fileID: 0}
+  enemyName: TurtleEnemy
+  enemyPrefab: {fileID: 8447490456244947102, guid: c7a75ca4f53115e4486a4466e074b504,
+    type: 3}
   enemyStats:
-    speed: 2
-    health: 15
-    damage: 2
+    speed: 1.5
+    health: 45
+    damage: 4
