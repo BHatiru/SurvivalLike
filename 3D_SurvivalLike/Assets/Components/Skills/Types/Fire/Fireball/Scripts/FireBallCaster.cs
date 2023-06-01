@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBallCaster : BaseSkill, ICastable
+public class FireBallCaster : BaseSkill, ICaster
 {
     [SerializeField] private float spreadAngle;
     private GameObject fireBall;

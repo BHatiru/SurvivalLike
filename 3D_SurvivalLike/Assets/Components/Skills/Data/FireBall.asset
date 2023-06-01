@@ -19,9 +19,23 @@ MonoBehaviour:
     type: 3}
   UpgradeInfo:
   - skillName: Fire Ball lvl 1
-    damage: 25
+    damage: 35
     cooldown: 3
     duration: 10
     quantity: 1
     radius: 30
     speed: 5
+  - skillName: Fire Ball lvl 2
+    damage: 65
+    cooldown: 2
+    duration: 10
+    quantity: 3
+    radius: 30
+    speed: 7.5
+  - skillName: Fire Ball lvl 3
+    damage: 95
+    cooldown: 1
+    duration: 10
+    quantity: 5
+    radius: 30
+    speed: 10

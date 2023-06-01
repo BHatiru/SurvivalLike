@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningStrike : BaseSkill, ICastable
+public class LightningStrikeCaster : BaseSkill, ICaster
 {
     [SerializeField] private float _impactRadius;   //radius of the lightning strike hit exploision
     [SerializeField] private float _heightOffset;   //height offset of the lightning strike

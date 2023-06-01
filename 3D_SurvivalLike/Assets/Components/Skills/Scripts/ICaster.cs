@@ -1,5 +1,5 @@
 //Interface for all castable skills
-public interface ICastable 
+public interface ICaster 
 {
     void Cast();
 }

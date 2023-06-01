@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningArcCaster : BaseSkill, ICastable
+public class LightningArcCaster : BaseSkill, ICaster
 {
     [SerializeField] private float rotationSpeed = 4.3f;  // Speed of rotation for the raycast
     private LightningArc[] lightningArcs;

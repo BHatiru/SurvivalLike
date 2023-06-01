@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowSlashCaster : BaseSkill, ICastable
+public class SnowSlashCaster : BaseSkill, ICaster
 {
     [SerializeField] private float slashRange = 4f;
     [SerializeField] private float _slashStackOffset = 0.3f;

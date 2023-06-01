@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c00b87065f46ef47b3e4bc80850ef11, type: 3}
-  m_Name: SnowSlash
+  m_Name: ChainLightning
   m_EditorClassIdentifier: 
-  skillIcon: {fileID: 21300000, guid: e26e94ddfc08ee042891e2b6c54b8342, type: 3}
-  SkillPrefab: {fileID: 1876187409748660733, guid: dd7a4401868336b45b0f72adc61fe9db,
+  skillIcon: {fileID: 21300000, guid: c15e467eacbf3ee4197483734b0a3c51, type: 3}
+  SkillPrefab: {fileID: 5488429793280716859, guid: e32d4ec6f8f6e5c4db2347dbf1fd843e,
     type: 3}
   SkillCaster: {fileID: 0}
   UpgradeInfo:
-  - skillName: Snow Slash lvl 1
+  - skillName: Chain Lightning lvl 1
     damage: 15
-    cooldown: 3
-    duration: 1
-    quantity: 1
-    radius: 2.25
-    speed: 0
-  - skillName: Snow Slash lvl 2
-    damage: 25
-    cooldown: 2.25
-    duration: 1
+    cooldown: 2
+    duration: 0
     quantity: 2
-    radius: 3.9375
+    radius: 10
     speed: 0
-  - skillName: Snow Slash lvl 2
+  - skillName: Chain Lightning lvl 2
     damage: 35
-    cooldown: 0.65
-    duration: 1
+    cooldown: 1.5
+    duration: 0
     quantity: 4
-    radius: 4.35
+    radius: 15
+    speed: 0
+  - skillName: Chain Lightning lvl 3
+    damage: 55
+    cooldown: 0.5
+    duration: 0
+    quantity: 7
+    radius: 15
     speed: 0

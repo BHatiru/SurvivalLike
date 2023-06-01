@@ -26,9 +26,9 @@ public class BaseSkill : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    protected void SetActive()
+    public void SetActive(bool isActive)
     {
-        IsActive = true;
+        IsActive = isActive;
     }
     protected void UpdateStats(SkillData data)
     {
@@ -43,10 +43,5 @@ public class BaseSkill : MonoBehaviour
         speed = info.speed;
     }
 
-
-    protected void UpdateModel()
-    {
-        //TODO  Update animation
-    }
 
 }
