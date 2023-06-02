@@ -25,8 +25,8 @@ public class SnowSlashCaster : BaseSkill, ICaster
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= cooldown){
+        cooldownTimer += Time.deltaTime;
+        if (cooldownTimer >= cooldown){
             Cast();
         }
         //TODO test feature, remove later
@@ -44,7 +44,7 @@ public class SnowSlashCaster : BaseSkill, ICaster
         transform.rotation = Quaternion.Euler(0, player.rotation.eulerAngles.y, 0);
         //cast the snow slash several times based on quantity with small delay between each slash
         StartCoroutine(ConsequtiveDelayedSlashes(_delayBetweenSlashes));
-        timer = 0f;
+        cooldownTimer = 0f;
     }
 
     private IEnumerator ConsequtiveDelayedSlashes(float delay)

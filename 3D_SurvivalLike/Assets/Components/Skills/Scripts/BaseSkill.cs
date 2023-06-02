@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseSkill : MonoBehaviour
+public class BaseSkill : SkillStateMachine
 {
     protected GameObject VFX_skillObj;
     protected string skillName;
@@ -17,7 +17,7 @@ public class BaseSkill : MonoBehaviour
     [SerializeField] protected int Level;
     protected bool IsActive;
 
-    protected float timer;
+    protected float cooldownTimer;
 
     protected Transform player;
     public SkillData _SkillData;

@@ -15,7 +15,8 @@ MonoBehaviour:
   skillIcon: {fileID: 21300000, guid: c15e467eacbf3ee4197483734b0a3c51, type: 3}
   SkillPrefab: {fileID: 5488429793280716859, guid: e32d4ec6f8f6e5c4db2347dbf1fd843e,
     type: 3}
-  SkillCaster: {fileID: 0}
+  SkillCaster: {fileID: 2265081059518785903, guid: 20af9c02b390ae64eb25c059059f3948,
+    type: 3}
   UpgradeInfo:
   - skillName: Chain Lightning lvl 1
     damage: 15

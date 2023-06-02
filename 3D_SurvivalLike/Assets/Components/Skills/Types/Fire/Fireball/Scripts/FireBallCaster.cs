@@ -37,8 +37,8 @@ public class FireBallCaster : BaseSkill, ICaster
             UpdateStats(_SkillData);
         }
         detector.FindEnemies(radius);
-        timer += Time.deltaTime;
-        if (timer >= cooldown)
+        cooldownTimer += Time.deltaTime;
+        if (cooldownTimer >= cooldown)
         {
             Cast();
         }
@@ -65,7 +65,7 @@ public class FireBallCaster : BaseSkill, ICaster
             SpawnFireBall(enemyPos, rotation);
         }
 
-        timer = 0f;
+        cooldownTimer = 0f;
     }
     private void SpawnFireBall(Vector3 enemyPos, Quaternion rotation){
         fireBall = Instantiate(VFX_skillObj, transform.position, rotation);

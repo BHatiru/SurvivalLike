@@ -20,6 +20,7 @@ public class LightningStrikeCaster : BaseSkill, ICaster
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Level++;
             UpdateStats(_SkillData);
         }
 
@@ -28,11 +29,11 @@ public class LightningStrikeCaster : BaseSkill, ICaster
     void FixedUpdate()
     {
         detector.FindEnemies(radius);
-        timer += Time.deltaTime;
-        if (timer >= cooldown)
+        cooldownTimer += Time.deltaTime;
+        if (cooldownTimer >= cooldown)
         {
             Cast();
-            timer = 0f;
+            cooldownTimer = 0f;
         }
     }
 
