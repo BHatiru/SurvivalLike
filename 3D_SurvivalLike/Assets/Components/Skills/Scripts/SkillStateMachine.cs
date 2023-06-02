@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SkillStateMachine : MonoBehaviour
 {
-    public float skillDuration = 4f;
-    public float cooldownDuration = 5f;
+    protected float skillDuration = 4f;
+    protected float cooldownDuration = 5f;
 
     protected enum SkillState { Cooldown, Active }
     protected SkillState currentState;

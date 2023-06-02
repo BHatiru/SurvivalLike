@@ -17,5 +17,5 @@ MonoBehaviour:
     type: 3}
   enemyStats:
     speed: 3
-    health: 35
+    health: 100
     damage: 4
