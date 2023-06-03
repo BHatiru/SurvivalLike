@@ -44,8 +44,5 @@ public class BaseSkill : SkillStateMachine
         speed = info.speed;
     }
 
-    private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
-    }
+
 }
