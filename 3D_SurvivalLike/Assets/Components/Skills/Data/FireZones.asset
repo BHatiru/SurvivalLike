@@ -15,24 +15,25 @@ MonoBehaviour:
   skillIcon: {fileID: 21300000, guid: 696c90b9124ba404db753fee761e0908, type: 3}
   SkillPrefab: {fileID: 7986504087968017091, guid: 12a56ee4630040c4eb17ae9707ed4cef,
     type: 3}
-  SkillCaster: {fileID: 0}
+  SkillCaster: {fileID: 314312984889893011, guid: 43f2afd7f8e3cb54186a83499f45449f,
+    type: 3}
   UpgradeInfo:
   - skillName: Fire Zones lvl 1
-    damage: 10
+    damage: 55
     cooldown: 1
     duration: 5
     quantity: 1
     radius: 3
     speed: 1
   - skillName: Fire Zones lvl 2
-    damage: 18
+    damage: 85
     cooldown: 1
     duration: 7
     quantity: 3
     radius: 5
     speed: 0.75
   - skillName: Fire Zones lvl 3
-    damage: 35
+    damage: 115
     cooldown: 1
     duration: 10
     quantity: 4

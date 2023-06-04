@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 4571664973732546811}
   - component: {fileID: 426294470531611153}
   - component: {fileID: 7932394463578963399}
+  - component: {fileID: 5230794308673980540}
   m_Layer: 8
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -523,6 +524,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9101074
   m_Center: {x: 0, y: 0.29999974, z: 0.31010658}
+--- !u!114 &5230794308673980540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517132889767214305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2836a2f432b7c974194d263303df542c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropList:
+  - {fileID: 2959909667985161178, guid: db20ecd43063a08489a44ec649181024, type: 3}
+  - {fileID: 1000010714891294, guid: 5a0537415d4017c4fad7a4986f502dc1, type: 3}
+  _expCrystalsDropChance: 0.2
+  _healthCrystalsDropChance: 0.01
 --- !u!1 &3517173461291462421
 GameObject:
   m_ObjectHideFlags: 0

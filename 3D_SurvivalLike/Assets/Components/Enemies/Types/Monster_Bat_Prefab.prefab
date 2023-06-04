@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 2983538256119706620}
   - component: {fileID: 3395193073654378892}
   - component: {fileID: 2592027464351739062}
+  - component: {fileID: 2096138327777280967}
   m_Layer: 8
   m_Name: Monster_Bat_Prefab
   m_TagString: Untagged
@@ -321,3 +322,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.6
   m_Center: {x: 0, y: 0.42, z: 0}
+--- !u!114 &2096138327777280967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579626421458405399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2836a2f432b7c974194d263303df542c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropList:
+  - {fileID: 2959909667985161178, guid: db20ecd43063a08489a44ec649181024, type: 3}
+  - {fileID: 1000010714891294, guid: 5a0537415d4017c4fad7a4986f502dc1, type: 3}
+  _expCrystalsDropChance: 0.2
+  _healthCrystalsDropChance: 0.01

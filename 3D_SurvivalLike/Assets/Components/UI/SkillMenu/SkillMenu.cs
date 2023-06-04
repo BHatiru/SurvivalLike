@@ -34,4 +34,8 @@ public class SkillMenu : MonoBehaviour
         CloseSkillMenu();
     }
 
+    void OnDestroy()
+    {
+        ExperienceManager.Instance.OnLevelUp -= OpenSkillMenu;
+    }
 }

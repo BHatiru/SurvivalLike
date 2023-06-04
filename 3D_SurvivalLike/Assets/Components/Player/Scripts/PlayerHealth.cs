@@ -21,12 +21,12 @@ public class PlayerHealth : MonoBehaviour
         // Debug.Log("Player took " + damage + " damage");
         if (_currentHealth <= 0f)
         {
-            Die();
+            Death();
         }
     }
 
-    public void Die(){
-        GameEventSystem.Instance.NotifyPlayerDied();
+    public void Death(){
+        GameManager.Instance.ChangeGameState(GameManager.GameState.Lose);
         Debug.Log("Player died");
     }
 
