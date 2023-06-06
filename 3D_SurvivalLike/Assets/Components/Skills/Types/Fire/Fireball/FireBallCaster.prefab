@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  Level: 3
+  Level: 0
   _SkillData: {fileID: 11400000, guid: bb03e76ae97075d46acd882c6b44a317, type: 2}
   spreadAngle: 45
 --- !u!114 &3115548340510553728
