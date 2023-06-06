@@ -41,7 +41,7 @@ public class FireZonesCaster : BaseSkill, ICaster
 
     private bool CanSpawn()
     {   
-        return (GameObject.FindObjectsOfType<FireZone>().Length < quantity);
+        return GameObject.FindObjectsOfType<FireZone>().Length < quantity;
     }
 
     private void SpawnFireZone(Vector3 position)
@@ -53,5 +53,17 @@ public class FireZonesCaster : BaseSkill, ICaster
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _spawnRadius);
+    }
+
+    public void ActivateSkillCaster()
+    {
+        gameObject.SetActive(true);
+    }
+    
+    public void UpdateCasterLevel()
+    {
+        Level++;
+        Debug.Log("Skill" +skillName +  "level updated to " + Level);
+        UpdateStats(_SkillData);
     }
 }

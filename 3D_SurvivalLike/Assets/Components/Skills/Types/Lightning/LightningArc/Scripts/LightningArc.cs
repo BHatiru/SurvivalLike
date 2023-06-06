@@ -67,5 +67,6 @@ public class LightningArc : MonoBehaviour
         Destroy(gameObject);
     }
 
+    
 }
 

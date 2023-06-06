@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
+using System;
 
 public class Timer : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class Timer : MonoBehaviour
     }
     void Update()
     {
-        //represent the time in the format of 00:00 (minutes:seconds)
-        timerText.text = TimeManager.Instance.gameTime.ToString("00:00");
+        TimeSpan timeSpan = TimeSpan.FromSeconds(TimeManager.Instance.gameTime);
+        string formattedTime = string.Format("{0:00}:{1:00}", timeSpan.Minutes, timeSpan.Seconds);
+        //represent the time in the format of mm:ss
+        timerText.text = formattedTime;
     }
 }

@@ -26,4 +26,9 @@ public class ExperienceBar : MonoBehaviour
         levelText.text = "Lvl. " + level;
     }
 
+    private void OnDestroy()
+    {
+        ExperienceManager.Instance.OnExperienceChange -= UpdateExperienceBar;
+        ExperienceManager.Instance.OnLevelUp -= UpdateLevelText;
+    }
 }

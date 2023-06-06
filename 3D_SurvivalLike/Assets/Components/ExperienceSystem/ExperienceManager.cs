@@ -4,7 +4,7 @@ using UnityEngine;
 public class ExperienceManager : MonoBehaviour
 {
     public static ExperienceManager Instance;
-    public delegate void ExperienceGainHandler(int expAmount);
+    public delegate void ExperienceGainHandler(float expAmount);
     public delegate void ExperienceChangeHandler(int currentExp, int maxExp);
     public delegate void LevelUpHandler(int level);
     public event ExperienceGainHandler OnExperienceGain;
@@ -15,12 +15,14 @@ public class ExperienceManager : MonoBehaviour
     private void Awake(){
         if(Instance == null){
             Instance = this;
+            //DontDestroyOnLoad(gameObject);
         }else{
             Destroy(this.gameObject);
         }
+        
     }
 
-    public void GainExperience(int expAmount)
+    public void GainExperience(float expAmount)
     {
         OnExperienceGain?.Invoke(expAmount);
     }
@@ -32,6 +34,7 @@ public class ExperienceManager : MonoBehaviour
     public void LevelUp(int level)
     {
         OnLevelUp?.Invoke(level);
+        Debug.Log("Level up!");
     }
 
 }

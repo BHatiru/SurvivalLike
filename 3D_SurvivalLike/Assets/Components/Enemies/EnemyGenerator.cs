@@ -8,22 +8,32 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] private Vector2 _spawnArea = new Vector2(10f, 10f);
     [SerializeField] private int _minEnemies = 5;
     [SerializeField] private int _maxEnemies = 10;
-    [SerializeField] private EnemyData _enemy;
+    //[SerializeField] private EnemyData _enemy;
     [SerializeField] private List<EnemyData> _enemies;
     [SerializeField] private Transform _player;
-
+    [SerializeField] private ExpCrystal _expCrystal;
     private float _spawnTimer = 0f;
     // Start is called before the first frame update
     void Start()
     {
+        //Set initial enemy stats
+        _enemies[0].enemyStats = batEnemyStats;
+        _enemies[1].enemyStats = slimeEnemyStats;
+        _enemies[2].enemyStats = turtleEnemyStats;
+        _expCrystal.expAmount = 20f;
     }
 
+    //The initial enemy stats for each type of enemy
+    public EnemyStats batEnemyStats = new(12f, 15f, 1.5f);
+    public EnemyStats slimeEnemyStats = new(5f, 25f, 5.5f);
+    public EnemyStats turtleEnemyStats = new(3f, 35f, 7f);
     void Update()
     {
         _spawnTimer += Time.deltaTime;
         if(_spawnTimer >= _spawnRate)
         {
-            SpawnBanchOfEnemies();
+            //choose random enemy from list
+            SpawnBanchOfEnemies(_enemies[Random.Range(0, _enemies.Count)]);
             _spawnTimer = 0f;
         }
     }
@@ -60,12 +70,27 @@ public class EnemyGenerator : MonoBehaviour
         enemy.transform.LookAt(_player);
     }
 
-    public void SpawnBanchOfEnemies()
+    public void SpawnBanchOfEnemies(EnemyData enemyData)
     {
         int randomNum = Random.Range(_minEnemies, _maxEnemies);
+        
         for (int i = 0; i < randomNum; i++)
         {
-            SpawnEnemy(_enemy);
+            EnemyData enemytospawn = Random.Range(0, 2) == 0 ? enemyData : _enemies[Random.Range(0, _enemies.Count)];
+            SpawnEnemy(enemytospawn);
+        }
+    }
+
+    public void IncreaseDifficulty(){
+        _spawnRate -= 0.3f;
+        _minEnemies += 3;
+        _maxEnemies += 5;
+        foreach (EnemyData enemy in _enemies)
+        {
+            enemy.enemyStats.damage += 0.5f;
+            enemy.enemyStats.health += 15f;
+            enemy.enemyStats.speed += 0.3f;
+            _expCrystal.expAmount *= 1.75f;
         }
     }
 

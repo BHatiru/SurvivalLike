@@ -72,4 +72,16 @@ public class IcyBlizzardCaster : BaseSkill, ICaster
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
+
+    public void ActivateSkillCaster()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void UpdateCasterLevel()
+    {
+        Level++;
+        Debug.Log("Skill" +skillName +  "level updated to " + Level);
+        UpdateStats(_SkillData);
+    }
 }

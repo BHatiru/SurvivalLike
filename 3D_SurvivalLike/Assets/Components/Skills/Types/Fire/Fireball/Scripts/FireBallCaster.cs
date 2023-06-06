@@ -21,8 +21,9 @@ public class FireBallCaster : BaseSkill, ICaster
 
     private BaseEnemy[] enemies;
     EnemyDetector detector;
-    private void Start()
+    void Start()
     {
+        Level=0;
         detector = player.GetComponent<EnemyDetector>();
         UpdateStats(_SkillData);
         Damage = damage;
@@ -73,4 +74,17 @@ public class FireBallCaster : BaseSkill, ICaster
         
     }
 
+    public void ActivateSkillCaster()
+    {
+        gameObject.SetActive(true);
+    }
+
+    
+    public void UpdateCasterLevel()
+    {
+        Level++;
+        UpdateStats(_SkillData);
+        Debug.Log("Skill" +skillName +  "level updated to " + Level);
+        
+    }
 }

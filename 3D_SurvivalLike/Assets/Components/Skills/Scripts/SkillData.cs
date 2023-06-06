@@ -8,8 +8,29 @@ public class SkillData : ScriptableObject
     public Sprite skillIcon;
     public GameObject SkillPrefab;
     public GameObject SkillCaster;
+
+    public string SkillName;
+
+    public enum SkillType
+    {
+        Fire,
+        Ice,
+        Lightning
+    };
+
+    public SkillType skillType;
+
+    public Dictionary<SkillType, Color> SkillColor = new ()
+    {
+        {SkillType.Fire, Color.red},
+        {SkillType.Ice, Color.blue},
+        {SkillType.Lightning, Color.yellow}
+    };
+    
+    public int CurrentLevel = -1;
+    public int SkillMaxLvl = 3;
+
     public List<SkillLevelInfo> UpgradeInfo;
-    internal string skillName;
 
     [System.Serializable]
     public class SkillLevelInfo

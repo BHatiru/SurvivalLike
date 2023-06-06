@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 5230794308673980540}
   m_Layer: 8
   m_Name: SlimePBR
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

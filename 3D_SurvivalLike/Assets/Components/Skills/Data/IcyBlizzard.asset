@@ -17,22 +17,26 @@ MonoBehaviour:
     type: 3}
   SkillCaster: {fileID: 523879641999074950, guid: 1b3020ff465951c4489bb9c1b3e2d2e8,
     type: 3}
+  SkillName: Ice Blizzard
+  skillType: 1
+  CurrentLevel: 0
+  SkillMaxLvl: 2
   UpgradeInfo:
-  - skillName: Icy Blizzard lvl 1
+  - skillName: Ice Blizzard lvl 1
     damage: 10
     cooldown: 5
     duration: 5
     quantity: 1
     radius: 4.5
     speed: 0
-  - skillName: Icy Blizzard lvl 2
+  - skillName: Ice Blizzard lvl 2
     damage: 15
     cooldown: 3.75
     duration: 5
     quantity: 1
     radius: 7.425
     speed: 0
-  - skillName: Icy Blizzard lvl 3
+  - skillName: Ice Blizzard lvl 3
     damage: 25
     cooldown: 2.5
     duration: 5

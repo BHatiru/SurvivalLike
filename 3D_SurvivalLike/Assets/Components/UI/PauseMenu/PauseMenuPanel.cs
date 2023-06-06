@@ -17,7 +17,7 @@ public class PauseMenuPanel : MonoBehaviour
         uiManager = UIManager.Instance;
         gameManager = GameManager.Instance;
 
-        uiManager.HidePanel(this.gameObject);
+        //uiManager.HidePanel(this.gameObject);
         
         continueButton.onClick.AddListener(ContinueGame);
         restartButton.onClick.AddListener(RestartGame);
@@ -25,23 +25,6 @@ public class PauseMenuPanel : MonoBehaviour
         quitButton.onClick.AddListener(QuitGame);
     }
 
-    void Update()
-    {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            if (uiManager.IsPanelActive(this.gameObject))
-            {
-                uiManager.HidePanel(this.gameObject);
-                GameManager.Instance.ChangeGameState(GameManager.GameState.Gameplay);
-            }
-            else
-            {
-                
-                uiManager.ShowPanel(this.gameObject);
-                GameManager.Instance.ChangeGameState(GameManager.GameState.Pause);
-            }
-        }
-    }
 
     private void ContinueGame()
     {

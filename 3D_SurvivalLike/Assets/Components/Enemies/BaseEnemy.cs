@@ -6,6 +6,12 @@ using TMPro;
 
 [Serializable]
 public class EnemyStats{
+    //default constructor that accept 3 arguments and assign them to the variables
+    public EnemyStats(float speed, float health, float damage){
+        this.speed = speed;
+        this.health = health;
+        this.damage = damage;
+    }
     public float speed= 2f;
     public float health=15f;
     public float damage=2f;
@@ -71,8 +77,7 @@ public class BaseEnemy : MonoBehaviour
             DamageIndicator indicator = Instantiate(_damageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
             indicator.SetDamageText(damage);
         }
-        
-        Debug.Log("Enemy registered damage");
+
         if (stats.health <= 0f)
         {
             Die();
@@ -92,7 +97,7 @@ public class BaseEnemy : MonoBehaviour
     {
         OnDeath?.Invoke();
         //Additional death behaviour
-        Debug.Log("Enemy died");
+
         //destroy object
         Destroy(gameObject);
     }

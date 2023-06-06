@@ -17,6 +17,10 @@ MonoBehaviour:
     type: 3}
   SkillCaster: {fileID: 2364008815042740295, guid: 2f7adf87f89a3d84a90f2e457b95c327,
     type: 3}
+  SkillName: Fire Ball
+  skillType: 0
+  CurrentLevel: -1
+  SkillMaxLvl: 2
   UpgradeInfo:
   - skillName: Fire Ball lvl 1
     damage: 35

@@ -4,30 +4,66 @@ using UnityEngine;
 
 public class SkillCastersManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] List<GameObject> skillCasters;
-    void Start()
-    {
-        ExperienceManager.Instance.OnLevelUp += SkillChoice;
-    }
+    public static SkillCastersManager Instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private SkillLibrary skillLibrary;
+    // [SerializeField] private GameObject _skillCastersMaster;
+    public List<SkillData> acquiredSkills; //what skills the player has already acquired
+    public List<SkillData> nonacquiredSkills; //what skill types the player has not yet acquired
+    private Dictionary<SkillData, SkillUpgrader> _skillCasters;
 
-    private void SkillChoice(int level)
+    private void Awake()
     {
-        switch (level)
+        if (Instance == null)
         {
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
+            Instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        acquiredSkills = new List<SkillData>();
+        nonacquiredSkills = new List<SkillData>();
+        _skillCasters = new Dictionary<SkillData, SkillUpgrader>();
+        foreach (SkillData skill in skillLibrary.Library)
+        {
+            nonacquiredSkills.Add(skill);
+            skill.CurrentLevel = -1;
         }
     }
+
+    void Update()
+    {
+        // if(_skillCastersMaster == null)
+        // {
+        //     _skillCastersMaster = FindObjectOfType<SkillHolder>().gameObject;
+        // }
+    }
+
+    public void AcquireNewSkill(SkillData skill)
+    {
+        Debug.Log("Acquire new skill");
+        acquiredSkills.Add(skill);
+        nonacquiredSkills.Remove(skill);
+        ActivateSkillCaster(skill);
+        skill.CurrentLevel = 1;
+    }
+
+    public void AcquireUpgrade(SkillData skill)
+    {
+        Debug.Log("Acquire upgrade");
+        //skill.SkillCaster?.GetComponent<ICaster>().UpdateCasterLevel();
+        _skillCasters[skill].UpgradeSkill();
+    }
+
+    public void ActivateSkillCaster(SkillData skill){
+        Debug.Log("Activate skill caster");
+        //skill.SkillCaster?.GetComponent<BaseSkill>().ActivateSkillCaster();
+        var sklObj = Instantiate(skill.SkillCaster, transform);
+
+        _skillCasters.Add(skill, sklObj.GetComponent<SkillUpgrader>());
+    }
+
 
 }

@@ -127,5 +127,17 @@ public class ChainLightningCaster : BaseSkill, ICaster
         Gizmos.DrawWireSphere(transform.position, chainRadius);
     }
 
+    public void ActivateSkillCaster()
+    {
+        gameObject.SetActive(true);
+    }
+
+    
+    public void UpdateCasterLevel()
+    {
+        Level++;
+        Debug.Log("Skill" +skillName +  "level updated to " + Level);
+        UpdateStats(_SkillData);
+    }
 }
 

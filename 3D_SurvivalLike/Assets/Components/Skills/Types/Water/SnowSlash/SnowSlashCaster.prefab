@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3461185493596981375}
   - component: {fileID: 3461185493596981368}
+  - component: {fileID: -8806073554859708834}
   m_Layer: 7
   m_Name: SnowSlashCaster
   m_TagString: Untagged
@@ -44,8 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f1f6603be5a454daa3a4aa06d77fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   Level: 0
   _SkillData: {fileID: 11400000, guid: 1ba0ce265b3a1264f8c87cc39ed8bd53, type: 2}
   slashRange: 4
   _slashStackOffset: 1.5
   _delayBetweenSlashes: 0.1
+--- !u!114 &-8806073554859708834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461185493596981374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d436abfb78354994f8c702671dec37cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

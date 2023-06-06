@@ -7,7 +7,7 @@ public class SkillHolder : MonoBehaviour
     private Transform player;  // Reference to the player's Transform
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = FindAnyObjectByType<PlayerControls>().transform;
     }
 
     // Update is called once per frame

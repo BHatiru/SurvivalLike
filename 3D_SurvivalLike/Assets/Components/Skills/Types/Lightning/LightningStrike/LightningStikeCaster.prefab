@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 644130372846174294}
   - component: {fileID: 644130372846174289}
+  - component: {fileID: 7318734868822332876}
   m_Layer: 7
   m_Name: LightningStikeCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &644130372846174294
 Transform:
   m_ObjectHideFlags: 0
@@ -44,7 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3639b3b79ab2a1145b5dfcbf2ff3052d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 2
+  timer: 0
+  Level: 0
   _SkillData: {fileID: 11400000, guid: ad83ef0a05bdf1f4eb9df0c492143251, type: 2}
   _impactRadius: 1.5
   _heightOffset: 16.5
+--- !u!114 &7318734868822332876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644130372846174295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d436abfb78354994f8c702671dec37cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

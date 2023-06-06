@@ -17,16 +17,20 @@ MonoBehaviour:
     type: 3}
   SkillCaster: {fileID: 314312984889893011, guid: 43f2afd7f8e3cb54186a83499f45449f,
     type: 3}
+  SkillName: Fire Zones
+  skillType: 0
+  CurrentLevel: -1
+  SkillMaxLvl: 2
   UpgradeInfo:
   - skillName: Fire Zones lvl 1
-    damage: 55
+    damage: 45
     cooldown: 1
     duration: 5
     quantity: 1
     radius: 3
     speed: 1
   - skillName: Fire Zones lvl 2
-    damage: 85
+    damage: 75
     cooldown: 1
     duration: 7
     quantity: 3

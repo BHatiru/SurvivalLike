@@ -5,4 +5,5 @@ using UnityEngine;
 public class SkillLibrary : ScriptableObject
 {
     public List<SkillData> Library;
+
 }

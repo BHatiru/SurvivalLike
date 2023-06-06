@@ -2,4 +2,6 @@
 public interface ICaster 
 {
     void Cast();
+
+    void UpdateCasterLevel();
 }

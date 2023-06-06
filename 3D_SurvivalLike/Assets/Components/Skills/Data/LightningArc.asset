@@ -17,23 +17,27 @@ MonoBehaviour:
     type: 3}
   SkillCaster: {fileID: 4502308284652850266, guid: f852d9fe7792a114faabf5c53d789451,
     type: 3}
+  SkillName: Lightning Arc
+  skillType: 2
+  CurrentLevel: 0
+  SkillMaxLvl: 2
   UpgradeInfo:
   - skillName: Lightning Arc lvl 1
-    damage: 20
+    damage: 2
     cooldown: 0
     duration: 0
     quantity: 1
     radius: 8
     speed: 8
-  - skillName: Lightning Arc lvl 1
-    damage: 35
+  - skillName: Lightning Arc lvl 2
+    damage: 3.5
     cooldown: 0
     duration: 0
     quantity: 2
     radius: 8
     speed: 14
-  - skillName: Lightning Arc lvl 1
-    damage: 60
+  - skillName: Lightning Arc lvl 3
+    damage: 10
     cooldown: 0
     duration: 0
     quantity: 4

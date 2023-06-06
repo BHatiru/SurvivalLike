@@ -61,6 +61,14 @@ public class LightningArcCaster : BaseSkill, ICaster
             
         }
     }
+
+    public void UpdateCasterLevel()
+    {
+        Level++;
+        Debug.Log("Skill" +skillName +  "level updated to " + Level);
+        UpdateStats(_SkillData);
+    }
+
 }
 
 

@@ -15,7 +15,12 @@ MonoBehaviour:
   skillIcon: {fileID: 21300000, guid: e26e94ddfc08ee042891e2b6c54b8342, type: 3}
   SkillPrefab: {fileID: 1876187409748660733, guid: dd7a4401868336b45b0f72adc61fe9db,
     type: 3}
-  SkillCaster: {fileID: 0}
+  SkillCaster: {fileID: 3461185493596981374, guid: e03399653a0944f48a2c60bbf059f47d,
+    type: 3}
+  SkillName: Ice Slash
+  skillType: 1
+  CurrentLevel: -1
+  SkillMaxLvl: 2
   UpgradeInfo:
   - skillName: Snow Slash lvl 1
     damage: 15
@@ -25,14 +30,14 @@ MonoBehaviour:
     radius: 2.25
     speed: 0
   - skillName: Snow Slash lvl 2
-    damage: 25
+    damage: 30
     cooldown: 2.25
     duration: 1
     quantity: 2
     radius: 3.9375
     speed: 0
-  - skillName: Snow Slash lvl 2
-    damage: 35
+  - skillName: Snow Slash lvl 3
+    damage: 45
     cooldown: 0.65
     duration: 1
     quantity: 4

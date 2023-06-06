@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ExpCrystal : basePickUp
 {
-    [SerializeField] private int expAmount = 20;
+    [SerializeField] public float expAmount = 20;
 
-    void Start()
-    {
-        
-    }
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
 
     public override void PickUp(Collider other)
     {

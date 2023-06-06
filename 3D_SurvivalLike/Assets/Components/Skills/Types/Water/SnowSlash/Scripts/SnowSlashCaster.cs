@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SnowSlashCaster : BaseSkill, ICaster
 {
+
     [SerializeField] private float slashRange = 4f;
     [SerializeField] private float _slashStackOffset = 0.3f;
     [SerializeField] private float _delayBetweenSlashes = 0.1f;
@@ -16,7 +17,7 @@ public class SnowSlashCaster : BaseSkill, ICaster
         UpdateStats(_SkillData);
         OldLvl = 0;
         OldQuantity = quantity;
-        
+        Level = 0;
         slashRange = radius;
         _slashStack = new SnowSlash[quantity];
         SpawnNewSlashes();
@@ -30,12 +31,7 @@ public class SnowSlashCaster : BaseSkill, ICaster
             Cast();
         }
         //TODO test feature, remove later
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Level++;
-            UpdateStats(_SkillData);
-            slashRange = radius;
-        }
+
     }
 
     public void Cast()
@@ -85,5 +81,12 @@ public class SnowSlashCaster : BaseSkill, ICaster
     private SnowSlash SpawnSnowSlash(){
         SnowSlash slash = Instantiate(VFX_skillObj, transform.position, Quaternion.identity, transform).GetComponent<SnowSlash>();
         return slash;
+    }
+
+    public void UpdateCasterLevel()
+    {
+        Level++;
+        Debug.Log("Skill" +skillName +  "level updated to " + Level);
+        UpdateStats(_SkillData);
     }
 }

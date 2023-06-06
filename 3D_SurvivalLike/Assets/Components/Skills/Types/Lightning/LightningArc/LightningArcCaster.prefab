@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4502308284652850277}
   - component: {fileID: 4502308284652850276}
+  - component: {fileID: 3718599688208087250}
   m_Layer: 7
   m_Name: LightningArcCaster
   m_TagString: Untagged
@@ -44,6 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ef7e79ff9e95d4797fa41943c934f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   Level: 0
   _SkillData: {fileID: 11400000, guid: 3ecd0ce5c5cdbd140afe0ae126ea9c4b, type: 2}
   rotationSpeed: 4.3
+--- !u!114 &3718599688208087250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502308284652850266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d436abfb78354994f8c702671dec37cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

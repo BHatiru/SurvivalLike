@@ -1,27 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLevel : MonoBehaviour
 {
-    private int maxLevel = 10;
-    private int currentLevel = 1;
-    [SerializeField] private int currentExperience = 0;
-    private int baseExperience = 100;
+    private int maxLevel = 21;
+    [SerializeField] private int currentLevel = 0;
+    [SerializeField] private float currentExperience = 0;
+    private float baseExperience = 100;
     [SerializeField] private float exponent = 2f;
 
     public int[] expToLevelUp;
-
+    
     private void Start()
     {
+        //LevelUp();
         expToLevelUp = new int[maxLevel+1];
+        Debug.Log("Calculate experience requirements");
         CalculateExperienceRequirements();
         ExperienceManager.Instance.OnExperienceGain += GainExperience;
-        ExperienceManager.Instance.LevelUp(currentLevel);
-        ExperienceManager.Instance.UpdateExperience(currentExperience, expToLevelUp[currentLevel]);
+        
+        ExperienceManager.Instance.UpdateExperience(Mathf.RoundToInt(currentExperience), expToLevelUp[currentLevel]);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         ExperienceManager.Instance.OnExperienceGain -= GainExperience;
     }
@@ -33,7 +36,7 @@ public class PlayerLevel : MonoBehaviour
     }
 
 
-    public void GainExperience(int expAmount)
+    public void GainExperience(float expAmount)
     {
         currentExperience += expAmount;
         
@@ -41,13 +44,14 @@ public class PlayerLevel : MonoBehaviour
         {
             LevelUp();
         }
-        ExperienceManager.Instance.UpdateExperience(currentExperience, expToLevelUp[currentLevel]);
+        Mathf.Clamp(currentExperience, 0, expToLevelUp[currentLevel]);
+        //convert to int
+        
+        ExperienceManager.Instance.UpdateExperience(Mathf.RoundToInt(currentExperience), expToLevelUp[currentLevel]);
     }
 
     public void LevelUp()
     {
-
-        
         //TODO: Add level up logic
 
         currentLevel++;

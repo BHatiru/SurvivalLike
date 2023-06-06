@@ -25,7 +25,10 @@ public class BaseSkill : SkillStateMachine
 
     protected void Awake()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        //copy the value wiothout reference
+        //_SkillData.CurrentLevel = Level;
     }
     public void SetActive(bool isActive)
     {
@@ -34,6 +37,7 @@ public class BaseSkill : SkillStateMachine
     protected void UpdateStats(SkillData data)
     {
         VFX_skillObj = data.SkillPrefab;
+        _SkillData.CurrentLevel = Level;
         SkillData.SkillLevelInfo info = data.UpgradeInfo[Level];
         skillName = info.skillName;
         damage = info.damage;
@@ -44,5 +48,8 @@ public class BaseSkill : SkillStateMachine
         speed = info.speed;
     }
 
+    protected int GetCurrentSkillLevel(){
+        return Level;
+    }
 
 }

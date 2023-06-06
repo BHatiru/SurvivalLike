@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2265081059518785902}
   - component: {fileID: 2265081059518785901}
+  - component: {fileID: -2666197724419588770}
   m_Layer: 7
   m_Name: ChainLightningCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2265081059518785902
 Transform:
   m_ObjectHideFlags: 0
@@ -44,11 +45,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c4027a23ef5b548a40edbdca196b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 2
+  timer: 0
+  Level: 0
   _SkillData: {fileID: 11400000, guid: 9152b436e3d7b7f4982d78edecb90b76, type: 2}
-  maxChainCount: 5
+  maxChainCount: 4
   chainRadius: 10
   chainDelay: 0.2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &-2666197724419588770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2265081059518785903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d436abfb78354994f8c702671dec37cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

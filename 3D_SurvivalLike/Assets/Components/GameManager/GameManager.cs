@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
         Lose
     }
 
-    public GameState CurrentState { get; private set; }
+    [SerializeField] public GameState CurrentState { get; private set; }
 
-    private PlayerInput playerInput;
+    [SerializeField]private PlayerInput playerInput;
     private UIManager uiManager;
 
     private TimeManager timeManager;
@@ -31,14 +31,12 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-
-        playerInput = FindObjectOfType<PlayerInput>();
     }
 
     private void Start()
@@ -46,9 +44,23 @@ public class GameManager : MonoBehaviour
 
         uiManager = UIManager.Instance;
         timeManager = TimeManager.Instance;
-
+        ExperienceManager.Instance.OnLevelUp += OnLevelUp;
+        ChangeGameState(GameState.StartGame);
         // Start the game in the StartMenu state
-        ChangeGameState(GameState.StartMenu);
+        //ChangeGameState(GameState.StartMenu);
+    }
+    
+
+
+    void Update()
+    {
+        if(playerInput == null)
+            playerInput = FindObjectOfType<PlayerInput>();
+    }
+
+    private void OnLevelUp(int level)
+    {
+        ChangeGameState(GameState.SkillSelection);
     }
 
     public void ChangeGameState(GameState newState)
@@ -58,12 +70,14 @@ public class GameManager : MonoBehaviour
         switch (CurrentState)
         {
             case GameState.StartMenu:
-                // Load the StartMenu scene
+                Debug.Log("StartMenu");
                 SceneManager.LoadScene("StartMenuScene");
+                // uiManager.ShowPanel(uiManager._startMenuPanel);
+                // PauseGame();
                 break;
 
             case GameState.StartGame:
-                // Load the Gameplay scene
+                
                 StartGame();
                 break;
 
@@ -75,12 +89,12 @@ public class GameManager : MonoBehaviour
             case GameState.SkillSelection:
                 // Show the SkillSelection panel (handled by the UIManager)
                 uiManager.ShowPanel(uiManager._skillSelectionPanel);
+
                 PauseGame();
                 break;
 
             case GameState.Pause:
                 PauseGame();
-                timeManager.PauseTime();
                 break;
 
             case GameState.Victory:
@@ -99,11 +113,18 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-
-        SceneManager.LoadScene("GameScene");
-        ChangeGameState(GameState.SkillSelection);
+        ResumeGame();
+        //ChangeGameState(GameState.SkillSelection);
     }
 
+    public void CloseAllPanels()
+    {
+        uiManager.HidePanel(uiManager._startMenuPanel);
+        uiManager.HidePanel(uiManager._skillSelectionPanel);
+        uiManager.HidePanel(uiManager._pauseMenuPanel);
+        uiManager.HidePanel(uiManager._victoryPanel);
+        uiManager.HidePanel(uiManager._losePanel);
+    }
     public void PauseGame()
     {
 
@@ -119,9 +140,12 @@ public class GameManager : MonoBehaviour
     {
 
         timeManager.ResumeTime();
-        //EnemyManager.Instance.PauseGeneration();
+        //EnemyManager.Instance.ResumeGeneration();
         // Enable player input
         playerInput.ActivateInput();
+
+        //close all panels
+        CloseAllPanels();
     }
 
     public void ReturnToStartMenu()
@@ -139,6 +163,11 @@ public class GameManager : MonoBehaviour
     {
         // Quit the game (works in a build)
         Application.Quit();
+    }
+
+    void OnDestroy()
+    {
+        ExperienceManager.Instance.OnLevelUp -= OnLevelUp;
     }
 
 }

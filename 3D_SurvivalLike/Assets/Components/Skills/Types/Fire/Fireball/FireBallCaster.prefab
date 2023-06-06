@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2364008815042740294}
   - component: {fileID: 2364008815042740289}
+  - component: {fileID: 3115548340510553728}
   m_Layer: 7
   m_Name: FireBallCaster
   m_TagString: Untagged
@@ -44,4 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a097f9882354c84eb3562473e50f30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  Level: 3
   _SkillData: {fileID: 11400000, guid: bb03e76ae97075d46acd882c6b44a317, type: 2}
+  spreadAngle: 45
+--- !u!114 &3115548340510553728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364008815042740295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d436abfb78354994f8c702671dec37cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

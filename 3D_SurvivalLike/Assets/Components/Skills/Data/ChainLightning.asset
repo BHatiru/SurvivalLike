@@ -17,6 +17,10 @@ MonoBehaviour:
     type: 3}
   SkillCaster: {fileID: 2265081059518785903, guid: 20af9c02b390ae64eb25c059059f3948,
     type: 3}
+  SkillName: Chain Lightning
+  skillType: 2
+  CurrentLevel: -1
+  SkillMaxLvl: 2
   UpgradeInfo:
   - skillName: Chain Lightning lvl 1
     damage: 15
